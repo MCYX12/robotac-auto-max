@@ -1,0 +1,31 @@
+{
+  "run_id": "quality_verification_full_20261102",
+  "duration_seconds": 1260,
+  "speed_mps": 0.45,
+  "stationary_structure": true,
+  "initial_panorama": true,
+  "late_floor_priority_after_seconds": 600,
+  "floor_detour_budget_seconds": 600,
+  "floor_maximum_path_m": 60,
+  "align_only_observation_goals": true,
+  "heartbeat_hz": 4,
+  "heartbeat_timeout_seconds": 4,
+  "asynchronous_gpu_probe": true,
+  "sha256": {
+    "dev_ws/src/robotac_mapping_baseline/src/odom_voxel_mapper.cpp": "9bdedd01724391ac414873a58972e36c776f8f89d83829ae539f23b2f1eee8c9",
+    "dev_ws/install_humble/robotac_mapping_baseline/lib/robotac_mapping_baseline/odom_voxel_mapper": "3c8b908d941e5526fb4515c98ab9f31d6c66afcad83b5425c2dd41132d15186e",
+    "finals_ws/src/robotac_finals/robotac_finals/exploration_controller.py": "42fa9542324eb9bbc751ff01b6b938daabfff2aad6674e0012e3041c953cb249",
+    "finals_ws/src/robotac_finals/robotac_finals/frontier_selector.py": "43103bd52cd09be8d5abf1848d0f6e0439bebb3e6c3811f67761dc2bc5b98b58",
+    "dev_ws/midterm/autonomous.launch.py": "34080b5744973613e034f5e6479c804b3c8b4efbad4fc906c359fbe049320b4e",
+    "deployment/run_session.py": "a10f02be0f84e96cf17afe44ac6357d3fd65b5901f903692db9d4d99a6fe1e15",
+    "deployment/audit_run.py": "0f5cc78ef8434d34e5e6924ca1d0918ca74c7437a1c8c05945778ded76c502df",
+    "deployment/validation/map_audit.py": "cb13f14a49c5e7c1be8b05fb4be68a2b4470339467df3df4c04fc4bd9a4ffeb5",
+    "deployment/simulation.py": "dc1873bc11abbddfab72c3cb638ae68ff9556d4b8f329b58f930f96977bb7d0f",
+    "deployment/gpu_probe.py": "5736776b7ddd76e315842bb550649bce9764782a46d6e16f85317e3621a023e8",
+    "deployment/common.py": "567ee4f2901e7be9feefde8bb18a74f8d8280aec4e4983ca121a0fd231fe9771",
+    "deployment/telemetry.py": "2b3c6850a4cfe37c6663140e0877808116c753f20c74a72bbb02a713170dd276",
+    "docker.sh": "69ef6747575e7db047796e131a6f5e65ec37f851234bb4a2c18254e6bfa75c67",
+    "run_auto_max.sh": "8b4449b930e1f2e0a639bbf9ec98061b62414fee0a6eb2c74f0e2ba7cf7e0dd9",
+    "finals_ws/src/robotac_finals/package.xml": "775025087fade319bb2d1e25aa18fd8ddfb82a4208beefd4bbae5771f26dfbfe"
+  }
+}

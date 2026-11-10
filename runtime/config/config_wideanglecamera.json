@@ -1,0 +1,55 @@
+{
+  "robot": {
+    "robot_type": "xgb",
+    "weapon": "",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "state_port": 25001,
+    "cmd_port": 25002,
+    "EgoView": true,
+    "synchronous_mode": false,
+    "synchronous_frequency": 10,
+    "mujoco_running": false,
+    "sensors": {
+      "wargb": {
+        "position": {
+          "x": 0.27,
+          "y": 0,
+          "z": 0.5
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        },
+        "height": 540,
+        "width": 960,
+        "sensor_type": "wargb",
+        "topic": "/wargb/front_left/compressed",
+        "fov": 80,
+        "frequency": 1
+      },
+      "wadrgb": {
+        "position": {
+          "x": 0.27,
+          "y": 0,
+          "z": 0.5
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        },
+        "height": 540,
+        "width": 960,
+        "sensor_type": "wadepth",
+        "topic": "/wadepth/front_left",
+        "fov": 80,
+        "frequency": 1
+      }
+    }
+  }
+}

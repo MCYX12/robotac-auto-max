@@ -1,0 +1,1871 @@
+{
+  "created_at_utc": "2026-11-03T10:49:13.053328+00:00",
+  "state": "PASS",
+  "requested_runs": 2,
+  "duration_seconds_each": 1800,
+  "scope": "local_simulation",
+  "perfect_map_certified": false,
+  "runs": [
+    {
+      "run_id": "hardening_repeat_v2_20261103_01",
+      "exit_code": 0,
+      "state": "COMPLETED",
+      "reason": "configured_geometry_proxy_checks_passed",
+      "sha256": "a8ced039f0cb457cc36885b0f9ff5a8c8feb7daa63060ab98bf70cc1ebd9ae93",
+      "points": 1894832,
+      "checks": {
+        "exit_success": true,
+        "terminal_completed": true,
+        "geometry_pass": true,
+        "geometry_checks_nonempty": true,
+        "every_geometry_check_pass": true,
+        "native_digest_matches": true,
+        "geometry_native_digest_matches": true,
+        "geometry_source_digests_match": true,
+        "geometry_policy_matches": true,
+        "version_unchanged": true,
+        "version_record_present": true
+      },
+      "pass": true,
+      "geometry": {
+        "pcd": "/workspace/dev_ws/midterm/runs/hardening_repeat_v2_20261103_01/hardening_repeat_v2_20261103_01_native.pcd",
+        "native_sha256": "a8ced039f0cb457cc36885b0f9ff5a8c8feb7daa63060ab98bf70cc1ebd9ae93",
+        "reference": "/workspace/runtime/src/robot_mujoco/zsibot_robots/xgb/unreal.xml",
+        "reference_role": "offline_validation_only",
+        "reference_walls": 32,
+        "reference_floor_area_m2": 289.40000000000003,
+        "alignment": "none; original world coordinates",
+        "floor_coverage": {
+          "0.05": 0.990005183137526,
+          "0.1": 0.9961990324809952,
+          "0.15": 0.9993348306841742,
+          "0.2": 1.0
+        },
+        "interior_wall_surface_coverage": {
+          "0.05": 0.8454978144730452,
+          "0.1": 0.9644293346284604,
+          "0.15": 0.9978436134045653,
+          "0.2": 0.9999805730937348
+        },
+        "wall_point_residual_m": {
+          "50": 4.832744598397276e-05,
+          "90": 0.09001754760742148,
+          "95": 0.09997277259826669,
+          "99": 0.14002632141113197
+        },
+        "wall_point_fraction_beyond": {
+          "0.05": 0.20863265951260004,
+          "0.1": 0.044419723473687854,
+          "0.2": 9.81331377105539e-05
+        },
+        "worst_walls": [
+          {
+            "wall": "phs_Cube2",
+            "target_count": 3050,
+            "surface_coverage_10cm": 0.841639344262295,
+            "surface_coverage_15cm": 0.9875409836065574,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.1507006454148208
+          },
+          {
+            "wall": "phs_Cube4",
+            "target_count": 1300,
+            "surface_coverage_10cm": 0.8630769230769231,
+            "surface_coverage_15cm": 0.9815384615384616,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.15058721176455453
+          },
+          {
+            "wall": "phs_Cube9",
+            "target_count": 1550,
+            "surface_coverage_10cm": 0.864516129032258,
+            "surface_coverage_15cm": 0.9851612903225806,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.15054726508393215
+          },
+          {
+            "wall": "phs_Cube8",
+            "target_count": 1550,
+            "surface_coverage_10cm": 0.8658064516129033,
+            "surface_coverage_15cm": 0.9870967741935484,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.15053067232841735
+          },
+          {
+            "wall": "phs_Cube31",
+            "target_count": 2225,
+            "surface_coverage_10cm": 0.9582022471910112,
+            "surface_coverage_15cm": 0.9986516853932584,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.1652806662875188
+          },
+          {
+            "wall": "phs_Cube5",
+            "target_count": 2050,
+            "surface_coverage_10cm": 0.9736585365853658,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.14105984597667642
+          },
+          {
+            "wall": "phs_Cube3",
+            "target_count": 1300,
+            "surface_coverage_10cm": 0.9769230769230769,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.1409809256641486
+          },
+          {
+            "wall": "phs_Cube29",
+            "target_count": 3825,
+            "surface_coverage_10cm": 0.9777777777777777,
+            "surface_coverage_15cm": 0.9992156862745099,
+            "surface_coverage_20cm": 0.9997385620915032,
+            "max_missing_distance_m": 0.20031156112522955
+          },
+          {
+            "wall": "phs_Cube30",
+            "target_count": 2850,
+            "surface_coverage_10cm": 0.9778947368421053,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.14211573287181042
+          },
+          {
+            "wall": "phs_Cube14",
+            "target_count": 2050,
+            "surface_coverage_10cm": 0.9780487804878049,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.1405885520832164
+          },
+          {
+            "wall": "phs_Cube15",
+            "target_count": 2050,
+            "surface_coverage_10cm": 0.9780487804878049,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.14062849663422158
+          },
+          {
+            "wall": "phs_Cube",
+            "target_count": 3050,
+            "surface_coverage_10cm": 0.9790163934426229,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.10117901095205474
+          },
+          {
+            "wall": "phs_Cube26",
+            "target_count": 5100,
+            "surface_coverage_10cm": 0.9790196078431372,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.13095583153912413
+          },
+          {
+            "wall": "phs_Cube28",
+            "target_count": 5100,
+            "surface_coverage_10cm": 0.9794117647058823,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.14098394738908973
+          },
+          {
+            "wall": "phs_Cube27",
+            "target_count": 3100,
+            "surface_coverage_10cm": 0.9803225806451613,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.1412425237778073
+          },
+          {
+            "wall": "phs_Cube10",
+            "target_count": 700,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04420806452306151
+          },
+          {
+            "wall": "phs_Cube11",
+            "target_count": 675,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.048430932149708485
+          },
+          {
+            "wall": "phs_Cube12",
+            "target_count": 675,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.02425206112295965
+          },
+          {
+            "wall": "phs_Cube13",
+            "target_count": 675,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.026689118922951942
+          },
+          {
+            "wall": "phs_Cube16",
+            "target_count": 550,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04229717891461598
+          },
+          {
+            "wall": "phs_Cube17",
+            "target_count": 550,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.042547791833363525
+          },
+          {
+            "wall": "phs_Cube18",
+            "target_count": 825,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.03437028259822514
+          },
+          {
+            "wall": "phs_Cube19",
+            "target_count": 825,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04310997749546992
+          },
+          {
+            "wall": "phs_Cube20",
+            "target_count": 825,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.042370295754663154
+          },
+          {
+            "wall": "phs_Cube21",
+            "target_count": 825,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04253972965394974
+          },
+          {
+            "wall": "phs_Cube22",
+            "target_count": 525,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04215861508561477
+          },
+          {
+            "wall": "phs_Cube23",
+            "target_count": 525,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04232772299248686
+          },
+          {
+            "wall": "phs_Cube24",
+            "target_count": 700,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.05281872393128658
+          },
+          {
+            "wall": "phs_Cube25",
+            "target_count": 550,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.0329057770723335
+          },
+          {
+            "wall": "phs_Cube32",
+            "target_count": 550,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04329819920651989
+          },
+          {
+            "wall": "phs_Cube6",
+            "target_count": 675,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04435910558109521
+          },
+          {
+            "wall": "phs_Cube7",
+            "target_count": 675,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04376629190601433
+          }
+        ],
+        "reference_sha256": "524fe86f259b28327c613b294dcff13d7a03056fe62c3de89cc72e698643f876",
+        "reference_wall_target_count": 51475,
+        "reference_floor_sampling": {
+          "grid_resolution_m": 0.05,
+          "seed_xy_m": [
+            0.0,
+            0.0
+          ],
+          "robot_center_seam_clearance_m": 0.32,
+          "target_count": 115760
+        },
+        "audit_policy": {
+          "version": "2026-11-03.v3",
+          "footprint_margin_m": 0.35,
+          "maximum_footprint_outlier_fraction": 0.0001,
+          "minimum_per_wall_coverage_at_20cm": 0.995,
+          "maximum_per_wall_gap_m": 0.25,
+          "minimum_z_m": -0.3,
+          "maximum_z_m": 3.35,
+          "outlier_cluster_voxel_m": 0.25,
+          "top_strip_heights_m": [
+            2.75,
+            2.85,
+            2.95
+          ],
+          "minimum_top_strip_coverage_at_20cm": 0.995,
+          "maximum_top_strip_gap_m": 0.25
+        },
+        "auditor_sha256": "f5eb62f11c5437ea220588d0921ea41ee997615629dc7aca71b033d07a86bff7",
+        "pcd_reader_sha256": "c037216177648c169e825f0f3bb881e72d406e734a435d690be2bb6332015610",
+        "all_point_spatial_support": {
+          "points": 1894832,
+          "outside_footprint_points": 109,
+          "outside_footprint_fraction": 5.7524888750031665e-05,
+          "maximum_footprint_distance_m": 2.1763751300285064,
+          "outside_height_points": 0,
+          "clusters": [
+            {
+              "points": 35,
+              "occupied_25cm_voxels": 8,
+              "bbox_min_m": [
+                12.25,
+                -3.0,
+                0.75
+              ],
+              "bbox_max_m": [
+                12.75,
+                -1.75,
+                1.5
+              ]
+            },
+            {
+              "points": 35,
+              "occupied_25cm_voxels": 9,
+              "bbox_min_m": [
+                19.0,
+                -9.0,
+                1.0
+              ],
+              "bbox_max_m": [
+                19.75,
+                -7.75,
+                2.0
+              ]
+            },
+            {
+              "points": 8,
+              "occupied_25cm_voxels": 2,
+              "bbox_min_m": [
+                19.75,
+                -2.25,
+                1.0
+              ],
+              "bbox_max_m": [
+                20.0,
+                -1.75,
+                1.25
+              ]
+            },
+            {
+              "points": 7,
+              "occupied_25cm_voxels": 2,
+              "bbox_min_m": [
+                12.75,
+                -2.5,
+                1.75
+              ],
+              "bbox_max_m": [
+                13.0,
+                -2.0,
+                2.0
+              ]
+            },
+            {
+              "points": 7,
+              "occupied_25cm_voxels": 3,
+              "bbox_min_m": [
+                19.0,
+                -9.75,
+                2.0
+              ],
+              "bbox_max_m": [
+                19.5,
+                -9.25,
+                2.75
+              ]
+            },
+            {
+              "points": 6,
+              "occupied_25cm_voxels": 3,
+              "bbox_min_m": [
+                12.0,
+                -17.5,
+                -0.25
+              ],
+              "bbox_max_m": [
+                12.5,
+                -17.0,
+                0.25
+              ]
+            },
+            {
+              "points": 3,
+              "occupied_25cm_voxels": 2,
+              "bbox_min_m": [
+                22.75,
+                -2.75,
+                0.0
+              ],
+              "bbox_max_m": [
+                23.0,
+                -2.25,
+                0.25
+              ]
+            },
+            {
+              "points": 2,
+              "occupied_25cm_voxels": 1,
+              "bbox_min_m": [
+                -3.25,
+                2.5,
+                3.0
+              ],
+              "bbox_max_m": [
+                -3.0,
+                2.75,
+                3.25
+              ]
+            },
+            {
+              "points": 2,
+              "occupied_25cm_voxels": 1,
+              "bbox_min_m": [
+                6.75,
+                -2.75,
+                2.0
+              ],
+              "bbox_max_m": [
+                7.0,
+                -2.5,
+                2.25
+              ]
+            },
+            {
+              "points": 2,
+              "occupied_25cm_voxels": 1,
+              "bbox_min_m": [
+                12.75,
+                -3.75,
+                0.5
+              ],
+              "bbox_max_m": [
+                13.0,
+                -3.5,
+                0.75
+              ]
+            },
+            {
+              "points": 1,
+              "occupied_25cm_voxels": 1,
+              "bbox_min_m": [
+                18.25,
+                1.5,
+                0.0
+              ],
+              "bbox_max_m": [
+                18.5,
+                1.75,
+                0.25
+              ]
+            },
+            {
+              "points": 1,
+              "occupied_25cm_voxels": 1,
+              "bbox_min_m": [
+                22.0,
+                1.5,
+                0.0
+              ],
+              "bbox_max_m": [
+                22.25,
+                1.75,
+                0.25
+              ]
+            }
+          ],
+          "cluster_gate": "diagnostic only; rendered surfaces outside collision seams require raw-data review"
+        },
+        "additional_surface_diagnostics": {
+          "wall_end_faces": {
+            "target_count": 1350,
+            "coverage_at_15cm": 1.0,
+            "coverage_at_20cm": 1.0,
+            "maximum_gap_m": 0.11804493899962426,
+            "worst_target_xyz_m": [
+              24.13,
+              -13.834999999999999,
+              0.3
+            ],
+            "gating": false
+          },
+          "wall_lower_strip": {
+            "target_count": 12606,
+            "coverage_at_15cm": 0.9482785974932572,
+            "coverage_at_20cm": 0.9997620180866255,
+            "maximum_gap_m": 0.23655878796931776,
+            "worst_target_xyz_m": [
+              22.655000000000005,
+              -13.909999999999998,
+              0.25
+            ],
+            "gating": false
+          },
+          "wall_upper_strip": {
+            "target_count": 12606,
+            "coverage_at_15cm": 1.0,
+            "coverage_at_20cm": 1.0,
+            "maximum_gap_m": 0.11701803971370399,
+            "worst_target_xyz_m": [
+              24.13,
+              -13.834999999999999,
+              2.95
+            ],
+            "gating": true
+          }
+        },
+        "height_band_support": {
+          "below_ground": {
+            "points": 3,
+            "outside_footprint_points": 3
+          },
+          "floor": {
+            "points": 455087,
+            "outside_footprint_points": 8
+          },
+          "lower_wall": {
+            "points": 82181,
+            "outside_footprint_points": 0
+          },
+          "main_wall": {
+            "points": 1243209,
+            "outside_footprint_points": 96
+          },
+          "upper_wall": {
+            "points": 114352,
+            "outside_footprint_points": 2
+          }
+        },
+        "legacy_geometry_ignored_points": 196536,
+        "limitations": [
+          "Collision boxes simplify the visible mesh; floor mask seals robot-inaccessible seams.",
+          "Coverage uses nearest measured points at stated spatial tolerances, not exact surface completeness.",
+          "No rigid alignment or reference-generated points are applied to the native PCD.",
+          "These proxy checks cannot certify a perfect map or zero drift.",
+          "Wall end faces and lower strips are diagnostic; the upper-strip gate checks observation support for the 3 m collision-wall proxy, not surveyed visible-mesh completeness.",
+          "The all-point footprint test detects spatial anomalies at every height but is not a temporal drift measurement."
+        ],
+        "floor_largest_gap_radius_m": 0.17481686136937444,
+        "floor_missing_area_beyond_10cm_m2": 1.1,
+        "floor_gap_clusters": [
+          {
+            "area_m2": 0.0625,
+            "largest_gap_radius_m": 0.17481686136937444,
+            "worst_xy_m": [
+              -2.6750000000000083,
+              -2.8249999999997777
+            ]
+          },
+          {
+            "area_m2": 0.05,
+            "largest_gap_radius_m": 0.17414533748842115,
+            "worst_xy_m": [
+              16.374999999999922,
+              -13.924999999999935
+            ]
+          },
+          {
+            "area_m2": 0.05,
+            "largest_gap_radius_m": 0.17338509379133252,
+            "worst_xy_m": [
+              13.174999999999937,
+              -13.924999999999935
+            ]
+          },
+          {
+            "area_m2": 0.07,
+            "largest_gap_radius_m": 0.17221347360271608,
+            "worst_xy_m": [
+              6.024999999999961,
+              -5.7249999999998185
+            ]
+          },
+          {
+            "area_m2": 0.05,
+            "largest_gap_radius_m": 0.17207927238601012,
+            "worst_xy_m": [
+              26.774999999999885,
+              -8.974999999999865
+            ]
+          },
+          {
+            "area_m2": 0.05,
+            "largest_gap_radius_m": 0.17159757903046038,
+            "worst_xy_m": [
+              24.224999999999895,
+              -6.124999999999824
+            ]
+          },
+          {
+            "area_m2": 0.05,
+            "largest_gap_radius_m": 0.17087233933437737,
+            "worst_xy_m": [
+              19.274999999999913,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.04250000000000001,
+            "largest_gap_radius_m": 0.1690186712914911,
+            "worst_xy_m": [
+              22.2749999999999,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.04000000000000001,
+            "largest_gap_radius_m": 0.15964975243116797,
+            "worst_xy_m": [
+              16.074999999999925,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.030000000000000006,
+            "largest_gap_radius_m": 0.15089308539317978,
+            "worst_xy_m": [
+              26.774999999999885,
+              -5.82499999999982
+            ]
+          },
+          {
+            "area_m2": 0.015000000000000003,
+            "largest_gap_radius_m": 0.1508778454385241,
+            "worst_xy_m": [
+              19.024999999999913,
+              -13.924999999999935
+            ]
+          },
+          {
+            "area_m2": 0.030000000000000006,
+            "largest_gap_radius_m": 0.15065467674163335,
+            "worst_xy_m": [
+              6.024999999999961,
+              -8.724999999999861
+            ]
+          },
+          {
+            "area_m2": 0.030000000000000006,
+            "largest_gap_radius_m": 0.1487845021617739,
+            "worst_xy_m": [
+              -2.6750000000000083,
+              -0.22499999999974066
+            ]
+          },
+          {
+            "area_m2": 0.015000000000000003,
+            "largest_gap_radius_m": 0.14399272843971558,
+            "worst_xy_m": [
+              8.574999999999953,
+              -5.224999999999811
+            ]
+          },
+          {
+            "area_m2": 0.027500000000000004,
+            "largest_gap_radius_m": 0.1428662466957028,
+            "worst_xy_m": [
+              6.024999999999961,
+              -14.724999999999946
+            ]
+          },
+          {
+            "area_m2": 0.027500000000000004,
+            "largest_gap_radius_m": 0.13799877869287333,
+            "worst_xy_m": [
+              8.574999999999953,
+              -8.724999999999861
+            ]
+          },
+          {
+            "area_m2": 0.0125,
+            "largest_gap_radius_m": 0.13637358112335296,
+            "worst_xy_m": [
+              8.574999999999953,
+              -5.474999999999815
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.1331522648832597,
+            "worst_xy_m": [
+              24.224999999999895,
+              -9.074999999999866
+            ]
+          },
+          {
+            "area_m2": 0.022500000000000003,
+            "largest_gap_radius_m": 0.13032391565010978,
+            "worst_xy_m": [
+              9.974999999999948,
+              -13.924999999999935
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.129788557203463,
+            "worst_xy_m": [
+              24.224999999999895,
+              -12.22499999999991
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.12947446515942002,
+            "worst_xy_m": [
+              13.074999999999935,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.1290355960324362,
+            "worst_xy_m": [
+              22.424999999999905,
+              -13.924999999999935
+            ]
+          },
+          {
+            "area_m2": 0.0175,
+            "largest_gap_radius_m": 0.1261526472798688,
+            "worst_xy_m": [
+              -1.625000000000012,
+              4.275000000000324
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.12475721941784347,
+            "worst_xy_m": [
+              10.324999999999946,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.027500000000000004,
+            "largest_gap_radius_m": 0.12352030604198166,
+            "worst_xy_m": [
+              7.074999999999957,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.020000000000000004,
+            "largest_gap_radius_m": 0.12337190063842493,
+            "worst_xy_m": [
+              7.474999999999955,
+              -1.224999999999755
+            ]
+          },
+          {
+            "area_m2": 0.022500000000000003,
+            "largest_gap_radius_m": 0.12301225175792828,
+            "worst_xy_m": [
+              26.774999999999885,
+              3.1750000000003076
+            ]
+          },
+          {
+            "area_m2": 0.027500000000000004,
+            "largest_gap_radius_m": 0.12079850437015695,
+            "worst_xy_m": [
+              26.774999999999885,
+              -15.274999999999954
+            ]
+          },
+          {
+            "area_m2": 0.027500000000000004,
+            "largest_gap_radius_m": 0.1171737563603403,
+            "worst_xy_m": [
+              25.024999999999892,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.020000000000000004,
+            "largest_gap_radius_m": 0.11679391014522604,
+            "worst_xy_m": [
+              -1.1250000000000138,
+              -4.274999999999798
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.11469669293367346,
+            "worst_xy_m": [
+              22.324999999999903,
+              -1.2749999999997557
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.11453090601606297,
+            "worst_xy_m": [
+              26.774999999999885,
+              -12.22499999999991
+            ]
+          },
+          {
+            "area_m2": 0.022500000000000003,
+            "largest_gap_radius_m": 0.11449190662707924,
+            "worst_xy_m": [
+              19.624999999999915,
+              -1.2749999999997557
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.11369326112672341,
+            "worst_xy_m": [
+              8.574999999999953,
+              -5.674999999999818
+            ]
+          }
+        ],
+        "proxy_checks": {
+          "floor_coverage_at_10cm_ge_99_5pct": true,
+          "floor_coverage_at_20cm_ge_99_999pct": true,
+          "largest_floor_gap_radius_le_25cm": true,
+          "wall_coverage_at_15cm_ge_99_5pct": true,
+          "wall_median_reference_residual_le_5mm": true,
+          "wall_outliers_beyond_20cm_le_0_01pct": true,
+          "all_height_footprint_outliers_beyond_35cm_le_0_01pct": true,
+          "all_points_within_configured_height_bounds": true,
+          "each_wall_coverage_at_20cm_ge_99_5pct": true,
+          "each_wall_largest_gap_le_25cm": true,
+          "top_strip_coverage_at_20cm_ge_99_5pct": true,
+          "top_strip_largest_gap_le_25cm": true
+        },
+        "proxy_check_pass": true,
+        "quality_state": "PASS_PROXY_CHECKS"
+      },
+      "software_sha256": {
+        "build.sh": "f07e1b7e7897fb73aec1c433c842c57d8b9160f7b3bae59394d97c4ac0e78b07",
+        "config/config.json": "7b5a2e237938e71c354231acdaacf24a31bc5bb9f1dc42e57fd34f556e1c23ba",
+        "deployment/SHA256SUMS.runtime.txt": "f64fdd45f8d29393075001e67902aa52f241d21179eaa7f7fc9a40c04f04ff7b",
+        "deployment/audit_run.py": "960a49ce34bf88e171fdee6082b7bb0c29e53fe26fdc25b1ca7cf56dc407e31c",
+        "deployment/check.py": "0abfb2887c34ba9ac5596e2293ab7e3426947d92031fd632bd485b4567ee152f",
+        "deployment/common.py": "a1e12b6fc816e170a1a32c3c6da62d04b57642d1d59a283dc839b20f6e5184e8",
+        "deployment/control.py": "e632d61bc45b47077c6d696031c7e88b24f2d53e63dae2e052f2ba753f33c66a",
+        "deployment/env.sh": "fc8aa7f2fb6d64bf708aa65f207ae8b1bd200478ea4960f9d7c4d13e9622aefa",
+        "deployment/gpu_probe.py": "5736776b7ddd76e315842bb550649bce9764782a46d6e16f85317e3621a023e8",
+        "deployment/observer.py": "36bc6b356c8923c63218791806f4726b9bde3586f41edb2973a9563b5ea1ca8b",
+        "deployment/provenance.py": "6858b0768610ce3826e0679fc1bd77365fd1671f58f199b216cdd35bdcda53d9",
+        "deployment/run_session.py": "1c540ee48bf857e93e2b53cc8e12bb3cdc5c1dbd755d0f0b47b35a22826dbfc1",
+        "deployment/simulation.py": "30fd75029de35efd4aed77604b99a2119976d9d5549950c0ed10e3c1d0e1e5d7",
+        "deployment/telemetry.py": "23a034cb25137a0190d39bf58a86d9673ddcd135f0c2d5478f6cc35d44fc5759",
+        "deployment/validation/calibrate_timing.py": "3a5e1637ef9fba4f878e57e5864f4c49dba3beb71c169cde2fdf08bc4a26d6cf",
+        "deployment/validation/map_audit.py": "f5eb62f11c5437ea220588d0921ea41ee997615629dc7aca71b033d07a86bff7",
+        "deployment/validation/plane_probe.py": "895c2a4c9df4a08eb88fd27b29bb1964024c629930979eae545cc0862d16d4b1",
+        "deployment/validation/repeat_runs.py": "d131054653f5fab1dc8f2909507e96aee09d43f27754b4ac929352d6b4d1431a",
+        "deps/zsibot_sdk/lib/zsl-1/x86_64/libmc_sdk_zsl_1_x86_64.so": "c03aa3503a6de49f50871e995221c6695d35320494e8e8d5ddde78a8b026594e",
+        "deps/zsibot_sdk/lib/zsl-1/x86_64/mc_sdk_zsl_1_py.cpython-310-x86_64-linux-gnu.so": "a0814e9ef9acd88a6193882c09742992a1aa1af133e0fa80b337c1574554b38e",
+        "dev_ws/install_humble/robotac_mapping_baseline/lib/robotac_mapping_baseline/odom_voxel_mapper": "fffc9adb99801296d5ab93408e25da8929f142be814358a5e4b4c33ad7053d50",
+        "dev_ws/midterm/autonomous.launch.py": "e5b0bb32bf402d6b75797af8120ffd384f938f712d20d5c99a697b6e2ec586bc",
+        "dev_ws/src/robotac_mapping_baseline/CMakeLists.txt": "c8d042dceec72b5b2286647a21b1aeda731dddbcb34d277a6d3cd07b1e514599",
+        "dev_ws/src/robotac_mapping_baseline/config/gicp_scan_mapper.yaml": "c4ba8be4c0ea8bdf430097145fb87ee3b84cbee5d4c511300df51e9a4d27624e",
+        "dev_ws/src/robotac_mapping_baseline/config/odom_voxel_mapper.yaml": "20444cb548eba93f0c390a2f149a90c347abb60cbd19611bfc98402f7e8f9574",
+        "dev_ws/src/robotac_mapping_baseline/package.xml": "073022b572b6fa2f459383f125921dc9628d44449895a5802badc04421b1e449",
+        "dev_ws/src/robotac_mapping_baseline/src/gicp_scan_mapper.cpp": "20e104f84ab31c93ed1aa138641020137c1332bb434788a446148d3730fb366c",
+        "dev_ws/src/robotac_mapping_baseline/src/mapping_guard.hpp": "73bc222f3a7c38925a7c7a074d2738a9e0555c27a60cd034abdfeb44be528a77",
+        "dev_ws/src/robotac_mapping_baseline/src/odom_voxel_mapper.cpp": "26867fd7d7de346619d1305954689addebf0ed1c47d327d2d7d6bb1574d18d0b",
+        "dev_ws/tools/depth_decode.py": "06c23a51b6c73faa21e28a11bc13ac015e8aa8ee910ca701b9324017cacee20f",
+        "dev_ws/tools/depth_ground_bridge.py": "28062b7eb9954f8187ecd472e59cad2314e452a59c9ddf9ff01319016744be0e",
+        "dev_ws/tools/pcd_preview.py": "21f2d9d3c6cafb85e7904da38dabe5e5e8ad9a1fdaac9f2a7aca6b2be6ec90b0",
+        "dev_ws/tools/pcd_quality_report.py": "c037216177648c169e825f0f3bb881e72d406e734a435d690be2bb6332015610",
+        "docker.sh": "71b6604b20bc3c7628ec5d52d47040046ce855486c015c819c384acebb7c5356",
+        "finals_ws/src/robotac_finals/config/task1.yaml": "e9dc14df7c9344a2b6b8338a06cebed33a837f595250aa58b950771c0ff57ff6",
+        "finals_ws/src/robotac_finals/config/task2.yaml": "8d2971a42d43cad728aa75f9831e23eb8389e23581c507fbeda506a29cd96895",
+        "finals_ws/src/robotac_finals/config/task2_targets_level1_asset_only.yaml": "16b3b4553373a251473ceb03c1c49d6280938cc1fb57198c7ab75028471b5d2e",
+        "finals_ws/src/robotac_finals/config/task2_targets_unverified.yaml": "fbacada5ea2e2b5caf87bf54977954111a5cb5648d7c4d754ed105003e1820fa",
+        "finals_ws/src/robotac_finals/launch/task1_observe.launch.py": "d6cdb0e6f0093819719c91ad99a55f355cac35439bdbb5d3fa41ccc767b22fda",
+        "finals_ws/src/robotac_finals/launch/task2.launch.py": "7b23bb0f89f508117a13d5effdc089b32067c0b661ee347863dfded6e39aaad2",
+        "finals_ws/src/robotac_finals/package.xml": "775025087fade319bb2d1e25aa18fd8ddfb82a4208beefd4bbae5771f26dfbfe",
+        "finals_ws/src/robotac_finals/robotac_finals/__init__.py": "a5503975ad7eab79fe9cc2a9d8546032121c744b1caa137a4adf2273f4e1a0fe",
+        "finals_ws/src/robotac_finals/robotac_finals/cloud_to_grid.py": "0bb453e7192283179559ef9a80d5a9f5983a556f45aa3b3829dfd34bd1c1d238",
+        "finals_ws/src/robotac_finals/robotac_finals/exploration_controller.py": "599ad0f3feb1b7617a64b061c4ec9857c1d32091aee8fcee29c8e593e5ad6494",
+        "finals_ws/src/robotac_finals/robotac_finals/frontier_selector.py": "88bfb8ffea72b8505ae49ab959c3f7291cb37e1e29b82756d9cd7040b1f50512",
+        "finals_ws/src/robotac_finals/robotac_finals/generate_task2_sim_scenario.py": "dde5911f4c791491b6aa0b85a785a2817da585e57b02fdaabc064eca3b86f06f",
+        "finals_ws/src/robotac_finals/robotac_finals/navigation_core.py": "27cea68cd1c5fb0e390c6928fafa40593342f571e794aa4be11371db3bc55b44",
+        "finals_ws/src/robotac_finals/robotac_finals/pcd_map_server.py": "3200824abee408295996751b43be327336114b88fea5f783c350001d71c9713c",
+        "finals_ws/src/robotac_finals/robotac_finals/ray_occupancy_grid.py": "23ab1e3767ab7eb988b35058027d0acaaf35142e13f56ad3ab0e98c1aac13337",
+        "finals_ws/src/robotac_finals/robotac_finals/robot_visualizer.py": "1de3abed709493d8f384a4125341e42415e1b6d9f48e312af2f1ad7ee6446f12",
+        "finals_ws/src/robotac_finals/robotac_finals/sdk_twist_bridge.py": "9d1600f4adcc2fcd276c76e7cf80f7f812fa786b2c9aa42b2cd30a39069ddd4a",
+        "finals_ws/src/robotac_finals/robotac_finals/task1_mission_manager.py": "af14b93387235d0720469c35be58f73c788f7c2e2b951411a9bd3c1bba5d2021",
+        "finals_ws/src/robotac_finals/robotac_finals/task2_box_simulator.py": "7054e7ed7486e7961e080d20a9858b499fe0d0b938578e34a46cba4308752618",
+        "finals_ws/src/robotac_finals/robotac_finals/task2_core.py": "60c5e33f91c6f9d1ac4711ac82b3a8b115100b228f379a5d568e1d9f1650019d",
+        "finals_ws/src/robotac_finals/robotac_finals/task2_mission_manager.py": "92c21173e1f590c2ed7599370f8a6707e1ebd0fdc4fad67add3f98fb068fdf15",
+        "finals_ws/src/robotac_finals/robotac_finals/task2_sim_core.py": "f6ab3fc98aa8e6d8de6a7af3df6e9ec7f8c826774e290c5923ac3fb0841f4af0",
+        "finals_ws/src/robotac_finals/rviz/task1.rviz": "77cc622ae6547d0b860f233dbe43ae9657df14d446e6a3647da7b5445fad2a8c",
+        "finals_ws/src/robotac_finals/rviz/task2_sim.rviz": "cc3d0f15912946372b8606a93b3716ff1975191865de537992a481b3ad4fae3f",
+        "finals_ws/src/robotac_finals/setup.cfg": "f1de5c826c2bd305ef1c436d53cebfec7c4952b33a1b8e95c2b9e517d1bb1f27",
+        "finals_ws/src/robotac_finals/setup.py": "4db4cbf2f657a8d82abd3ef2a6d93e216e8540dd906291e77b3f594a53cf33fb",
+        "finals_ws/test/validate_task1_artifact.py": "633acdf1b9b0ce3b54e5da44a47d9fb6e6672efcd582586c7df438e1828c3846",
+        "run_auto_max.sh": "e02515ccefa6b0a799ce4ef6791b61195076e390bf6baab4b32e1810b9af6ac7",
+        "runtime/config/config.json": "860d65ef871be96445fd3e07e2b4213cd9d35d84c6ab132b8bfa9fd981274753",
+        "runtime/src/UeSim/Linux/UeSim/Binaries/Linux/UeSim": "dc10d13b7f4775bad6744ab7d92e49d9267743518e1c23f18f5e77300532dc80",
+        "runtime/src/UeSim/Linux/UeSim/Content/model/config/config.json": "860d65ef871be96445fd3e07e2b4213cd9d35d84c6ab132b8bfa9fd981274753",
+        "runtime/src/robot_mc/build/export/config/sdk_config.yaml": "3cee4c8934eeb8aa34f4fb47f9f5a57ecb28127b3408a020dcae2597ead5ea45",
+        "runtime/src/robot_mc/build/export/mc/bin/mc_ctrl": "4fa0c4a364244aa911b137726c36994ed9a1d42009b3b0b61016a2d8409fdea0",
+        "runtime/src/robot_mujoco/simulate/build/robot_mujoco": "8f96a848d80082aa843e7ae43c5beed785eb00770c17e5665ed5c589dd166e1c",
+        "runtime/src/robot_mujoco/zsibot_robots/xgb/unreal.xml": "524fe86f259b28327c613b294dcff13d7a03056fe62c3de89cc72e698643f876"
+      }
+    },
+    {
+      "run_id": "hardening_repeat_v2_20261103_02",
+      "exit_code": 0,
+      "state": "COMPLETED",
+      "reason": "configured_geometry_proxy_checks_passed",
+      "sha256": "f0f8c97b68db88f955781e9e499c8d6afa10dd1b261d0097ba001e1e9ddbd5c7",
+      "points": 1876440,
+      "checks": {
+        "exit_success": true,
+        "terminal_completed": true,
+        "geometry_pass": true,
+        "geometry_checks_nonempty": true,
+        "every_geometry_check_pass": true,
+        "native_digest_matches": true,
+        "geometry_native_digest_matches": true,
+        "geometry_source_digests_match": true,
+        "geometry_policy_matches": true,
+        "version_unchanged": true,
+        "version_record_present": true
+      },
+      "pass": true,
+      "geometry": {
+        "pcd": "/workspace/dev_ws/midterm/runs/hardening_repeat_v2_20261103_02/hardening_repeat_v2_20261103_02_native.pcd",
+        "native_sha256": "f0f8c97b68db88f955781e9e499c8d6afa10dd1b261d0097ba001e1e9ddbd5c7",
+        "reference": "/workspace/runtime/src/robot_mujoco/zsibot_robots/xgb/unreal.xml",
+        "reference_role": "offline_validation_only",
+        "reference_walls": 32,
+        "reference_floor_area_m2": 289.40000000000003,
+        "alignment": "none; original world coordinates",
+        "floor_coverage": {
+          "0.05": 0.9897892190739461,
+          "0.1": 0.9962335867311679,
+          "0.15": 0.9993175535590878,
+          "0.2": 1.0
+        },
+        "interior_wall_surface_coverage": {
+          "0.05": 0.8459640602234094,
+          "0.1": 0.9644099077221953,
+          "0.15": 0.9974939290917921,
+          "0.2": 1.0
+        },
+        "wall_point_residual_m": {
+          "50": 5.3286552429157585e-05,
+          "90": 0.09001621246337908,
+          "95": 0.0999662160873414,
+          "99": 0.14002250671386735
+        },
+        "wall_point_fraction_beyond": {
+          "0.05": 0.20653082965376016,
+          "0.1": 0.04421658787860088,
+          "0.2": 5.034208257075905e-05
+        },
+        "worst_walls": [
+          {
+            "wall": "phs_Cube4",
+            "target_count": 1300,
+            "surface_coverage_10cm": 0.8392307692307692,
+            "surface_coverage_15cm": 0.9830769230769231,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.15080086338901247
+          },
+          {
+            "wall": "phs_Cube2",
+            "target_count": 3050,
+            "surface_coverage_10cm": 0.8465573770491803,
+            "surface_coverage_15cm": 0.9842622950819672,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.15066568397069877
+          },
+          {
+            "wall": "phs_Cube8",
+            "target_count": 1550,
+            "surface_coverage_10cm": 0.8651612903225806,
+            "surface_coverage_15cm": 0.984516129032258,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.15069275213886446
+          },
+          {
+            "wall": "phs_Cube9",
+            "target_count": 1550,
+            "surface_coverage_10cm": 0.8651612903225806,
+            "surface_coverage_15cm": 0.9851612903225806,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.15061288925340308
+          },
+          {
+            "wall": "phs_Cube31",
+            "target_count": 2225,
+            "surface_coverage_10cm": 0.9703370786516854,
+            "surface_coverage_15cm": 0.9982022471910112,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.1972776575373161
+          },
+          {
+            "wall": "phs_Cube5",
+            "target_count": 2050,
+            "surface_coverage_10cm": 0.9726829268292683,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.14156477123131264
+          },
+          {
+            "wall": "phs_Cube3",
+            "target_count": 1300,
+            "surface_coverage_10cm": 0.9761538461538461,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.14082868429043968
+          },
+          {
+            "wall": "phs_Cube29",
+            "target_count": 3825,
+            "surface_coverage_10cm": 0.9762091503267973,
+            "surface_coverage_15cm": 0.9981699346405228,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.18398246344638025
+          },
+          {
+            "wall": "phs_Cube15",
+            "target_count": 2050,
+            "surface_coverage_10cm": 0.9775609756097561,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.1407212762634643
+          },
+          {
+            "wall": "phs_Cube30",
+            "target_count": 2850,
+            "surface_coverage_10cm": 0.9778947368421053,
+            "surface_coverage_15cm": 0.9996491228070176,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.1552806690026965
+          },
+          {
+            "wall": "phs_Cube14",
+            "target_count": 2050,
+            "surface_coverage_10cm": 0.9780487804878049,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.1407132470325297
+          },
+          {
+            "wall": "phs_Cube",
+            "target_count": 3050,
+            "surface_coverage_10cm": 0.9783606557377049,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.10208385127028624
+          },
+          {
+            "wall": "phs_Cube26",
+            "target_count": 5100,
+            "surface_coverage_10cm": 0.9794117647058823,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.13117190179720206
+          },
+          {
+            "wall": "phs_Cube28",
+            "target_count": 5100,
+            "surface_coverage_10cm": 0.9794117647058823,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.1439469646593378
+          },
+          {
+            "wall": "phs_Cube27",
+            "target_count": 3100,
+            "surface_coverage_10cm": 0.9796774193548388,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.1406181971905561
+          },
+          {
+            "wall": "phs_Cube10",
+            "target_count": 700,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04567722651450019
+          },
+          {
+            "wall": "phs_Cube11",
+            "target_count": 675,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.046756897273914945
+          },
+          {
+            "wall": "phs_Cube12",
+            "target_count": 675,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.025871675383820177
+          },
+          {
+            "wall": "phs_Cube13",
+            "target_count": 675,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.029437650855750015
+          },
+          {
+            "wall": "phs_Cube16",
+            "target_count": 550,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04223200843467013
+          },
+          {
+            "wall": "phs_Cube17",
+            "target_count": 550,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.042389502327889975
+          },
+          {
+            "wall": "phs_Cube18",
+            "target_count": 825,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.03330055890010673
+          },
+          {
+            "wall": "phs_Cube19",
+            "target_count": 825,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04241117200921979
+          },
+          {
+            "wall": "phs_Cube20",
+            "target_count": 825,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.042425007585271436
+          },
+          {
+            "wall": "phs_Cube21",
+            "target_count": 825,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.042199188047331145
+          },
+          {
+            "wall": "phs_Cube22",
+            "target_count": 525,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.042131363473538165
+          },
+          {
+            "wall": "phs_Cube23",
+            "target_count": 525,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04239402636621912
+          },
+          {
+            "wall": "phs_Cube24",
+            "target_count": 700,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.0493164846601582
+          },
+          {
+            "wall": "phs_Cube25",
+            "target_count": 550,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.03322926880891466
+          },
+          {
+            "wall": "phs_Cube32",
+            "target_count": 550,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.0430440305423634
+          },
+          {
+            "wall": "phs_Cube6",
+            "target_count": 675,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.04443599517523195
+          },
+          {
+            "wall": "phs_Cube7",
+            "target_count": 675,
+            "surface_coverage_10cm": 1.0,
+            "surface_coverage_15cm": 1.0,
+            "surface_coverage_20cm": 1.0,
+            "max_missing_distance_m": 0.043440211564835296
+          }
+        ],
+        "reference_sha256": "524fe86f259b28327c613b294dcff13d7a03056fe62c3de89cc72e698643f876",
+        "reference_wall_target_count": 51475,
+        "reference_floor_sampling": {
+          "grid_resolution_m": 0.05,
+          "seed_xy_m": [
+            0.0,
+            0.0
+          ],
+          "robot_center_seam_clearance_m": 0.32,
+          "target_count": 115760
+        },
+        "audit_policy": {
+          "version": "2026-11-03.v3",
+          "footprint_margin_m": 0.35,
+          "maximum_footprint_outlier_fraction": 0.0001,
+          "minimum_per_wall_coverage_at_20cm": 0.995,
+          "maximum_per_wall_gap_m": 0.25,
+          "minimum_z_m": -0.3,
+          "maximum_z_m": 3.35,
+          "outlier_cluster_voxel_m": 0.25,
+          "top_strip_heights_m": [
+            2.75,
+            2.85,
+            2.95
+          ],
+          "minimum_top_strip_coverage_at_20cm": 0.995,
+          "maximum_top_strip_gap_m": 0.25
+        },
+        "auditor_sha256": "f5eb62f11c5437ea220588d0921ea41ee997615629dc7aca71b033d07a86bff7",
+        "pcd_reader_sha256": "c037216177648c169e825f0f3bb881e72d406e734a435d690be2bb6332015610",
+        "all_point_spatial_support": {
+          "points": 1876440,
+          "outside_footprint_points": 55,
+          "outside_footprint_fraction": 2.9310822621559974e-05,
+          "maximum_footprint_distance_m": 1.4807372741628184,
+          "outside_height_points": 0,
+          "clusters": [
+            {
+              "points": 36,
+              "occupied_25cm_voxels": 9,
+              "bbox_min_m": [
+                19.0,
+                3.0,
+                1.25
+              ],
+              "bbox_max_m": [
+                19.75,
+                3.5,
+                2.5
+              ]
+            },
+            {
+              "points": 6,
+              "occupied_25cm_voxels": 4,
+              "bbox_min_m": [
+                11.5,
+                -2.75,
+                0.0
+              ],
+              "bbox_max_m": [
+                11.75,
+                -1.75,
+                0.25
+              ]
+            },
+            {
+              "points": 4,
+              "occupied_25cm_voxels": 2,
+              "bbox_min_m": [
+                19.25,
+                3.75,
+                2.5
+              ],
+              "bbox_max_m": [
+                19.5,
+                4.0,
+                3.0
+              ]
+            },
+            {
+              "points": 3,
+              "occupied_25cm_voxels": 1,
+              "bbox_min_m": [
+                11.0,
+                -17.25,
+                0.0
+              ],
+              "bbox_max_m": [
+                11.25,
+                -17.0,
+                0.25
+              ]
+            },
+            {
+              "points": 2,
+              "occupied_25cm_voxels": 1,
+              "bbox_min_m": [
+                -3.25,
+                2.5,
+                3.0
+              ],
+              "bbox_max_m": [
+                -3.0,
+                2.75,
+                3.25
+              ]
+            },
+            {
+              "points": 2,
+              "occupied_25cm_voxels": 1,
+              "bbox_min_m": [
+                4.25,
+                -2.5,
+                1.0
+              ],
+              "bbox_max_m": [
+                4.5,
+                -2.25,
+                1.25
+              ]
+            },
+            {
+              "points": 2,
+              "occupied_25cm_voxels": 1,
+              "bbox_min_m": [
+                6.75,
+                -3.0,
+                1.75
+              ],
+              "bbox_max_m": [
+                7.0,
+                -2.75,
+                2.0
+              ]
+            }
+          ],
+          "cluster_gate": "diagnostic only; rendered surfaces outside collision seams require raw-data review"
+        },
+        "additional_surface_diagnostics": {
+          "wall_end_faces": {
+            "target_count": 1350,
+            "coverage_at_15cm": 1.0,
+            "coverage_at_20cm": 1.0,
+            "maximum_gap_m": 0.11575598163204878,
+            "worst_target_xyz_m": [
+              24.13,
+              -13.834999999999999,
+              0.4
+            ],
+            "gating": false
+          },
+          "wall_lower_strip": {
+            "target_count": 12606,
+            "coverage_at_15cm": 0.94859590671109,
+            "coverage_at_20cm": 0.9998413453910836,
+            "maximum_gap_m": 0.21560266007254456,
+            "worst_target_xyz_m": [
+              9.80500000000005,
+              -13.91,
+              0.25
+            ],
+            "gating": false
+          },
+          "wall_upper_strip": {
+            "target_count": 12606,
+            "coverage_at_15cm": 1.0,
+            "coverage_at_20cm": 1.0,
+            "maximum_gap_m": 0.12020824959185389,
+            "worst_target_xyz_m": [
+              9.85500000000005,
+              -13.91,
+              2.75
+            ],
+            "gating": true
+          }
+        },
+        "height_band_support": {
+          "below_ground": {
+            "points": 0,
+            "outside_footprint_points": 0
+          },
+          "floor": {
+            "points": 454015,
+            "outside_footprint_points": 6
+          },
+          "lower_wall": {
+            "points": 80059,
+            "outside_footprint_points": 3
+          },
+          "main_wall": {
+            "points": 1231574,
+            "outside_footprint_points": 44
+          },
+          "upper_wall": {
+            "points": 110792,
+            "outside_footprint_points": 2
+          }
+        },
+        "legacy_geometry_ignored_points": 190851,
+        "limitations": [
+          "Collision boxes simplify the visible mesh; floor mask seals robot-inaccessible seams.",
+          "Coverage uses nearest measured points at stated spatial tolerances, not exact surface completeness.",
+          "No rigid alignment or reference-generated points are applied to the native PCD.",
+          "These proxy checks cannot certify a perfect map or zero drift.",
+          "Wall end faces and lower strips are diagnostic; the upper-strip gate checks observation support for the 3 m collision-wall proxy, not surveyed visible-mesh completeness.",
+          "The all-point footprint test detects spatial anomalies at every height but is not a temporal drift measurement."
+        ],
+        "floor_largest_gap_radius_m": 0.17544032611237095,
+        "floor_missing_area_beyond_10cm_m2": 1.09,
+        "floor_gap_clusters": [
+          {
+            "area_m2": 0.065,
+            "largest_gap_radius_m": 0.17544032611237095,
+            "worst_xy_m": [
+              -2.6750000000000083,
+              -3.1749999999997827
+            ]
+          },
+          {
+            "area_m2": 0.05500000000000001,
+            "largest_gap_radius_m": 0.17368286899168126,
+            "worst_xy_m": [
+              -2.6750000000000083,
+              -0.22499999999974066
+            ]
+          },
+          {
+            "area_m2": 0.05,
+            "largest_gap_radius_m": 0.173180544794357,
+            "worst_xy_m": [
+              19.174999999999912,
+              -13.924999999999935
+            ]
+          },
+          {
+            "area_m2": 0.05,
+            "largest_gap_radius_m": 0.17239938813431518,
+            "worst_xy_m": [
+              24.224999999999895,
+              -5.874999999999821
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.172269660109457,
+            "worst_xy_m": [
+              19.374999999999915,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.04000000000000001,
+            "largest_gap_radius_m": 0.17206443588771927,
+            "worst_xy_m": [
+              26.774999999999885,
+              -8.924999999999864
+            ]
+          },
+          {
+            "area_m2": 0.05,
+            "largest_gap_radius_m": 0.171261756339616,
+            "worst_xy_m": [
+              16.024999999999928,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.05,
+            "largest_gap_radius_m": 0.1708122685975807,
+            "worst_xy_m": [
+              16.074999999999925,
+              -13.924999999999935
+            ]
+          },
+          {
+            "area_m2": 0.04250000000000001,
+            "largest_gap_radius_m": 0.1707020427282564,
+            "worst_xy_m": [
+              24.224999999999895,
+              -9.074999999999866
+            ]
+          },
+          {
+            "area_m2": 0.05,
+            "largest_gap_radius_m": 0.1684407167362676,
+            "worst_xy_m": [
+              13.224999999999937,
+              -13.924999999999935
+            ]
+          },
+          {
+            "area_m2": 0.0625,
+            "largest_gap_radius_m": 0.1663905421792238,
+            "worst_xy_m": [
+              6.024999999999961,
+              -6.024999999999823
+            ]
+          },
+          {
+            "area_m2": 0.037500000000000006,
+            "largest_gap_radius_m": 0.1485181855466599,
+            "worst_xy_m": [
+              8.574999999999953,
+              -5.774999999999819
+            ]
+          },
+          {
+            "area_m2": 0.027500000000000004,
+            "largest_gap_radius_m": 0.14747953795617827,
+            "worst_xy_m": [
+              22.424999999999905,
+              -13.924999999999935
+            ]
+          },
+          {
+            "area_m2": 0.022500000000000003,
+            "largest_gap_radius_m": 0.14693195675190945,
+            "worst_xy_m": [
+              -1.5250000000000123,
+              4.275000000000324
+            ]
+          },
+          {
+            "area_m2": 0.027500000000000004,
+            "largest_gap_radius_m": 0.1454046248803425,
+            "worst_xy_m": [
+              10.174999999999947,
+              -13.924999999999935
+            ]
+          },
+          {
+            "area_m2": 0.015000000000000003,
+            "largest_gap_radius_m": 0.1395976621447273,
+            "worst_xy_m": [
+              6.024999999999961,
+              -9.074999999999866
+            ]
+          },
+          {
+            "area_m2": 0.027500000000000004,
+            "largest_gap_radius_m": 0.13576517040497976,
+            "worst_xy_m": [
+              6.024999999999961,
+              -14.724999999999946
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.13033054729056984,
+            "worst_xy_m": [
+              10.174999999999947,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.13004430259754546,
+            "worst_xy_m": [
+              13.374999999999936,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.1248246378420947,
+            "worst_xy_m": [
+              26.774999999999885,
+              -11.874999999999906
+            ]
+          },
+          {
+            "area_m2": 0.027500000000000004,
+            "largest_gap_radius_m": 0.12441752155366476,
+            "worst_xy_m": [
+              7.324999999999957,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.022500000000000003,
+            "largest_gap_radius_m": 0.12436393811875877,
+            "worst_xy_m": [
+              25.17499999999989,
+              -16.474999999999973
+            ]
+          },
+          {
+            "area_m2": 0.010000000000000002,
+            "largest_gap_radius_m": 0.12387658712436705,
+            "worst_xy_m": [
+              4.8249999999999655,
+              -1.224999999999755
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.12355279300897216,
+            "worst_xy_m": [
+              7.174999999999958,
+              -1.224999999999755
+            ]
+          },
+          {
+            "area_m2": 0.010000000000000002,
+            "largest_gap_radius_m": 0.122171591349155,
+            "worst_xy_m": [
+              8.574999999999953,
+              -12.22499999999991
+            ]
+          },
+          {
+            "area_m2": 0.022500000000000003,
+            "largest_gap_radius_m": 0.12209245523522032,
+            "worst_xy_m": [
+              -1.2250000000000134,
+              -4.274999999999798
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.12168803828716952,
+            "worst_xy_m": [
+              16.724999999999923,
+              -7.2749999999998405
+            ]
+          },
+          {
+            "area_m2": 0.027500000000000004,
+            "largest_gap_radius_m": 0.12126067202896544,
+            "worst_xy_m": [
+              26.774999999999885,
+              -14.97499999999995
+            ]
+          },
+          {
+            "area_m2": 0.010000000000000002,
+            "largest_gap_radius_m": 0.12048036083575625,
+            "worst_xy_m": [
+              6.024999999999961,
+              -8.774999999999862
+            ]
+          },
+          {
+            "area_m2": 0.015000000000000003,
+            "largest_gap_radius_m": 0.11909669036873621,
+            "worst_xy_m": [
+              16.52499999999992,
+              7.275000000000366
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.11797324906451515,
+            "worst_xy_m": [
+              26.774999999999885,
+              3.2250000000003083
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.11287412480408256,
+            "worst_xy_m": [
+              19.57499999999991,
+              -1.2749999999997557
+            ]
+          },
+          {
+            "area_m2": 0.025,
+            "largest_gap_radius_m": 0.11195897745541918,
+            "worst_xy_m": [
+              22.474999999999902,
+              -1.2749999999997557
+            ]
+          }
+        ],
+        "proxy_checks": {
+          "floor_coverage_at_10cm_ge_99_5pct": true,
+          "floor_coverage_at_20cm_ge_99_999pct": true,
+          "largest_floor_gap_radius_le_25cm": true,
+          "wall_coverage_at_15cm_ge_99_5pct": true,
+          "wall_median_reference_residual_le_5mm": true,
+          "wall_outliers_beyond_20cm_le_0_01pct": true,
+          "all_height_footprint_outliers_beyond_35cm_le_0_01pct": true,
+          "all_points_within_configured_height_bounds": true,
+          "each_wall_coverage_at_20cm_ge_99_5pct": true,
+          "each_wall_largest_gap_le_25cm": true,
+          "top_strip_coverage_at_20cm_ge_99_5pct": true,
+          "top_strip_largest_gap_le_25cm": true
+        },
+        "proxy_check_pass": true,
+        "quality_state": "PASS_PROXY_CHECKS"
+      },
+      "software_sha256": {
+        "build.sh": "f07e1b7e7897fb73aec1c433c842c57d8b9160f7b3bae59394d97c4ac0e78b07",
+        "config/config.json": "7b5a2e237938e71c354231acdaacf24a31bc5bb9f1dc42e57fd34f556e1c23ba",
+        "deployment/SHA256SUMS.runtime.txt": "f64fdd45f8d29393075001e67902aa52f241d21179eaa7f7fc9a40c04f04ff7b",
+        "deployment/audit_run.py": "960a49ce34bf88e171fdee6082b7bb0c29e53fe26fdc25b1ca7cf56dc407e31c",
+        "deployment/check.py": "0abfb2887c34ba9ac5596e2293ab7e3426947d92031fd632bd485b4567ee152f",
+        "deployment/common.py": "a1e12b6fc816e170a1a32c3c6da62d04b57642d1d59a283dc839b20f6e5184e8",
+        "deployment/control.py": "e632d61bc45b47077c6d696031c7e88b24f2d53e63dae2e052f2ba753f33c66a",
+        "deployment/env.sh": "fc8aa7f2fb6d64bf708aa65f207ae8b1bd200478ea4960f9d7c4d13e9622aefa",
+        "deployment/gpu_probe.py": "5736776b7ddd76e315842bb550649bce9764782a46d6e16f85317e3621a023e8",
+        "deployment/observer.py": "36bc6b356c8923c63218791806f4726b9bde3586f41edb2973a9563b5ea1ca8b",
+        "deployment/provenance.py": "6858b0768610ce3826e0679fc1bd77365fd1671f58f199b216cdd35bdcda53d9",
+        "deployment/run_session.py": "1c540ee48bf857e93e2b53cc8e12bb3cdc5c1dbd755d0f0b47b35a22826dbfc1",
+        "deployment/simulation.py": "30fd75029de35efd4aed77604b99a2119976d9d5549950c0ed10e3c1d0e1e5d7",
+        "deployment/telemetry.py": "23a034cb25137a0190d39bf58a86d9673ddcd135f0c2d5478f6cc35d44fc5759",
+        "deployment/validation/calibrate_timing.py": "3a5e1637ef9fba4f878e57e5864f4c49dba3beb71c169cde2fdf08bc4a26d6cf",
+        "deployment/validation/map_audit.py": "f5eb62f11c5437ea220588d0921ea41ee997615629dc7aca71b033d07a86bff7",
+        "deployment/validation/plane_probe.py": "895c2a4c9df4a08eb88fd27b29bb1964024c629930979eae545cc0862d16d4b1",
+        "deployment/validation/repeat_runs.py": "d131054653f5fab1dc8f2909507e96aee09d43f27754b4ac929352d6b4d1431a",
+        "deps/zsibot_sdk/lib/zsl-1/x86_64/libmc_sdk_zsl_1_x86_64.so": "c03aa3503a6de49f50871e995221c6695d35320494e8e8d5ddde78a8b026594e",
+        "deps/zsibot_sdk/lib/zsl-1/x86_64/mc_sdk_zsl_1_py.cpython-310-x86_64-linux-gnu.so": "a0814e9ef9acd88a6193882c09742992a1aa1af133e0fa80b337c1574554b38e",
+        "dev_ws/install_humble/robotac_mapping_baseline/lib/robotac_mapping_baseline/odom_voxel_mapper": "fffc9adb99801296d5ab93408e25da8929f142be814358a5e4b4c33ad7053d50",
+        "dev_ws/midterm/autonomous.launch.py": "e5b0bb32bf402d6b75797af8120ffd384f938f712d20d5c99a697b6e2ec586bc",
+        "dev_ws/src/robotac_mapping_baseline/CMakeLists.txt": "c8d042dceec72b5b2286647a21b1aeda731dddbcb34d277a6d3cd07b1e514599",
+        "dev_ws/src/robotac_mapping_baseline/config/gicp_scan_mapper.yaml": "c4ba8be4c0ea8bdf430097145fb87ee3b84cbee5d4c511300df51e9a4d27624e",
+        "dev_ws/src/robotac_mapping_baseline/config/odom_voxel_mapper.yaml": "20444cb548eba93f0c390a2f149a90c347abb60cbd19611bfc98402f7e8f9574",
+        "dev_ws/src/robotac_mapping_baseline/package.xml": "073022b572b6fa2f459383f125921dc9628d44449895a5802badc04421b1e449",
+        "dev_ws/src/robotac_mapping_baseline/src/gicp_scan_mapper.cpp": "20e104f84ab31c93ed1aa138641020137c1332bb434788a446148d3730fb366c",
+        "dev_ws/src/robotac_mapping_baseline/src/mapping_guard.hpp": "73bc222f3a7c38925a7c7a074d2738a9e0555c27a60cd034abdfeb44be528a77",
+        "dev_ws/src/robotac_mapping_baseline/src/odom_voxel_mapper.cpp": "26867fd7d7de346619d1305954689addebf0ed1c47d327d2d7d6bb1574d18d0b",
+        "dev_ws/tools/depth_decode.py": "06c23a51b6c73faa21e28a11bc13ac015e8aa8ee910ca701b9324017cacee20f",
+        "dev_ws/tools/depth_ground_bridge.py": "28062b7eb9954f8187ecd472e59cad2314e452a59c9ddf9ff01319016744be0e",
+        "dev_ws/tools/pcd_preview.py": "21f2d9d3c6cafb85e7904da38dabe5e5e8ad9a1fdaac9f2a7aca6b2be6ec90b0",
+        "dev_ws/tools/pcd_quality_report.py": "c037216177648c169e825f0f3bb881e72d406e734a435d690be2bb6332015610",
+        "docker.sh": "71b6604b20bc3c7628ec5d52d47040046ce855486c015c819c384acebb7c5356",
+        "finals_ws/src/robotac_finals/config/task1.yaml": "e9dc14df7c9344a2b6b8338a06cebed33a837f595250aa58b950771c0ff57ff6",
+        "finals_ws/src/robotac_finals/config/task2.yaml": "8d2971a42d43cad728aa75f9831e23eb8389e23581c507fbeda506a29cd96895",
+        "finals_ws/src/robotac_finals/config/task2_targets_level1_asset_only.yaml": "16b3b4553373a251473ceb03c1c49d6280938cc1fb57198c7ab75028471b5d2e",
+        "finals_ws/src/robotac_finals/config/task2_targets_unverified.yaml": "fbacada5ea2e2b5caf87bf54977954111a5cb5648d7c4d754ed105003e1820fa",
+        "finals_ws/src/robotac_finals/launch/task1_observe.launch.py": "d6cdb0e6f0093819719c91ad99a55f355cac35439bdbb5d3fa41ccc767b22fda",
+        "finals_ws/src/robotac_finals/launch/task2.launch.py": "7b23bb0f89f508117a13d5effdc089b32067c0b661ee347863dfded6e39aaad2",
+        "finals_ws/src/robotac_finals/package.xml": "775025087fade319bb2d1e25aa18fd8ddfb82a4208beefd4bbae5771f26dfbfe",
+        "finals_ws/src/robotac_finals/robotac_finals/__init__.py": "a5503975ad7eab79fe9cc2a9d8546032121c744b1caa137a4adf2273f4e1a0fe",
+        "finals_ws/src/robotac_finals/robotac_finals/cloud_to_grid.py": "0bb453e7192283179559ef9a80d5a9f5983a556f45aa3b3829dfd34bd1c1d238",
+        "finals_ws/src/robotac_finals/robotac_finals/exploration_controller.py": "599ad0f3feb1b7617a64b061c4ec9857c1d32091aee8fcee29c8e593e5ad6494",
+        "finals_ws/src/robotac_finals/robotac_finals/frontier_selector.py": "88bfb8ffea72b8505ae49ab959c3f7291cb37e1e29b82756d9cd7040b1f50512",
+        "finals_ws/src/robotac_finals/robotac_finals/generate_task2_sim_scenario.py": "dde5911f4c791491b6aa0b85a785a2817da585e57b02fdaabc064eca3b86f06f",
+        "finals_ws/src/robotac_finals/robotac_finals/navigation_core.py": "27cea68cd1c5fb0e390c6928fafa40593342f571e794aa4be11371db3bc55b44",
+        "finals_ws/src/robotac_finals/robotac_finals/pcd_map_server.py": "3200824abee408295996751b43be327336114b88fea5f783c350001d71c9713c",
+        "finals_ws/src/robotac_finals/robotac_finals/ray_occupancy_grid.py": "23ab1e3767ab7eb988b35058027d0acaaf35142e13f56ad3ab0e98c1aac13337",
+        "finals_ws/src/robotac_finals/robotac_finals/robot_visualizer.py": "1de3abed709493d8f384a4125341e42415e1b6d9f48e312af2f1ad7ee6446f12",
+        "finals_ws/src/robotac_finals/robotac_finals/sdk_twist_bridge.py": "9d1600f4adcc2fcd276c76e7cf80f7f812fa786b2c9aa42b2cd30a39069ddd4a",
+        "finals_ws/src/robotac_finals/robotac_finals/task1_mission_manager.py": "af14b93387235d0720469c35be58f73c788f7c2e2b951411a9bd3c1bba5d2021",
+        "finals_ws/src/robotac_finals/robotac_finals/task2_box_simulator.py": "7054e7ed7486e7961e080d20a9858b499fe0d0b938578e34a46cba4308752618",
+        "finals_ws/src/robotac_finals/robotac_finals/task2_core.py": "60c5e33f91c6f9d1ac4711ac82b3a8b115100b228f379a5d568e1d9f1650019d",
+        "finals_ws/src/robotac_finals/robotac_finals/task2_mission_manager.py": "92c21173e1f590c2ed7599370f8a6707e1ebd0fdc4fad67add3f98fb068fdf15",
+        "finals_ws/src/robotac_finals/robotac_finals/task2_sim_core.py": "f6ab3fc98aa8e6d8de6a7af3df6e9ec7f8c826774e290c5923ac3fb0841f4af0",
+        "finals_ws/src/robotac_finals/rviz/task1.rviz": "77cc622ae6547d0b860f233dbe43ae9657df14d446e6a3647da7b5445fad2a8c",
+        "finals_ws/src/robotac_finals/rviz/task2_sim.rviz": "cc3d0f15912946372b8606a93b3716ff1975191865de537992a481b3ad4fae3f",
+        "finals_ws/src/robotac_finals/setup.cfg": "f1de5c826c2bd305ef1c436d53cebfec7c4952b33a1b8e95c2b9e517d1bb1f27",
+        "finals_ws/src/robotac_finals/setup.py": "4db4cbf2f657a8d82abd3ef2a6d93e216e8540dd906291e77b3f594a53cf33fb",
+        "finals_ws/test/validate_task1_artifact.py": "633acdf1b9b0ce3b54e5da44a47d9fb6e6672efcd582586c7df438e1828c3846",
+        "run_auto_max.sh": "e02515ccefa6b0a799ce4ef6791b61195076e390bf6baab4b32e1810b9af6ac7",
+        "runtime/config/config.json": "860d65ef871be96445fd3e07e2b4213cd9d35d84c6ab132b8bfa9fd981274753",
+        "runtime/src/UeSim/Linux/UeSim/Binaries/Linux/UeSim": "dc10d13b7f4775bad6744ab7d92e49d9267743518e1c23f18f5e77300532dc80",
+        "runtime/src/UeSim/Linux/UeSim/Content/model/config/config.json": "860d65ef871be96445fd3e07e2b4213cd9d35d84c6ab132b8bfa9fd981274753",
+        "runtime/src/robot_mc/build/export/config/sdk_config.yaml": "3cee4c8934eeb8aa34f4fb47f9f5a57ecb28127b3408a020dcae2597ead5ea45",
+        "runtime/src/robot_mc/build/export/mc/bin/mc_ctrl": "4fa0c4a364244aa911b137726c36994ed9a1d42009b3b0b61016a2d8409fdea0",
+        "runtime/src/robot_mujoco/simulate/build/robot_mujoco": "8f96a848d80082aa843e7ae43c5beed785eb00770c17e5665ed5c589dd166e1c",
+        "runtime/src/robot_mujoco/zsibot_robots/xgb/unreal.xml": "524fe86f259b28327c613b294dcff13d7a03056fe62c3de89cc72e698643f876"
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "first_run": "hardening_repeat_v2_20261103_01",
+      "second_run": "hardening_repeat_v2_20261103_02",
+      "alignment": "none",
+      "wall_z_band_m": [
+        0.25,
+        2.85
+      ],
+      "limits": {
+        "p95_m": 0.1,
+        "p99_m": 0.2
+      },
+      "directions": [
+        {
+          "sample_points": 207202,
+          "median_m": 0.0026625412357383967,
+          "p95_m": 0.010535465421570368,
+          "p99_m": 0.019683850035953833,
+          "maximum_m": 1.4634164367489704
+        },
+        {
+          "sample_points": 205263,
+          "median_m": 0.0026623625410435348,
+          "p95_m": 0.01010504708277774,
+          "p99_m": 0.017282220187091735,
+          "maximum_m": 1.4120051938530138
+        }
+      ],
+      "pass": true,
+      "limitation": "Across-run consistency in native coordinates is not a measurement of within-run temporal drift."
+    }
+  ],
+  "acceptance": "Each run must pass all geometry and provenance checks; all native-coordinate wall comparisons must have p95<=0.10m and p99<=0.20m in both directions.",
+  "updated_at_utc": "2026-11-03T11:49:57.450058+00:00"
+}

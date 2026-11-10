@@ -1,0 +1,9 @@
+# Copy this file for the competition map, replace every coordinate in the ROS
+# world frame, document how they were measured, then set targets_verified true.
+robotac_task2_mission_manager:
+  ros__parameters:
+    target_profile_kind: official_measured
+    target_names: [box_1, box_2, box_3, box_4, box_5]
+    target_coordinates: [-999.0, -999.0, -998.0, -999.0, -997.0, -999.0, -996.0, -999.0, -995.0, -999.0]
+    target_coordinate_provenance: UNSET
+    targets_verified: false

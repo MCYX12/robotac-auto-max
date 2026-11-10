@@ -1,0 +1,21 @@
+gicp_scan_mapper:
+  ros__parameters:
+    lidar_topic: /front_lidar
+    odom_topic: /odom/mujoco_odom
+    use_odom_prior: false
+    max_odom_time_offset: 0.02
+    save_service: /robotac/save_gicp_map
+    save_path: /workspace/dev_ws/maps/gicp_baseline.pcd
+    map_voxel_size: 0.035
+    registration_voxel_size: 0.20
+    min_range: 0.20
+    max_range: 40.0
+    max_correspondence_distance: 0.75
+    max_iterations: 25
+    max_fitness_score: 0.12
+    process_every_n_scans: 1
+    lidar_translation: [0.0, 0.0, 0.30]
+    lidar_rpy: [0.0, 0.0, 0.0]
+    self_filter_enabled: true
+    self_min: [-0.45, -0.30, 0.00]
+    self_max: [0.45, 0.30, 0.55]

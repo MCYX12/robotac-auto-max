@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "sha256": "d2681f2bc19c25873ef0e65f575d19746d1cc58df4a63ebacbb0733b09ac7f6a",
+  "frames": [
+    {
+      "source": "missing_valid_surface",
+      "frame": 202,
+      "points": 11458,
+      "sha256_float32_samples": "478e608423a0b7fd22e0fbe9674fcbe9a9d8446d6ce5fe19e87ea12b36abd4f7"
+    },
+    {
+      "source": "missing_valid_surface",
+      "frame": 208,
+      "points": 11446,
+      "sha256_float32_samples": "6dade9e562f6a7157df15e8fd36d69e32cff9f94ceaedc743849e043569a3436"
+    },
+    {
+      "source": "missing_valid_surface",
+      "frame": 210,
+      "points": 11547,
+      "sha256_float32_samples": "66dfdc1d3cd9bb5a7f24e14734000b7d96d9477f96f16e88027fba31508c5d0d"
+    },
+    {
+      "source": "missing_valid_surface",
+      "frame": 216,
+      "points": 11455,
+      "sha256_float32_samples": "28ace7431de6078c677a579aa45684ff47153d93f8f1b8894144c7f9540a455f"
+    },
+    {
+      "source": "missing_valid_surface",
+      "frame": 322,
+      "points": 13169,
+      "sha256_float32_samples": "bd24abc8edaced5f8e2d26d8c067df87f48d79aec86e26545a9c3fff85136f03"
+    },
+    {
+      "source": "missing_valid_surface",
+      "frame": 339,
+      "points": 10816,
+      "sha256_float32_samples": "0c827d0eb2d6ef697a2f500abac68cc70e100b009d8712d69488d1081d003215"
+    },
+    {
+      "source": "missing_valid_surface",
+      "frame": 599,
+      "points": 11564,
+      "sha256_float32_samples": "1ee5c84b892afc1a38ff9302f549dffd8e4f3e27a1115256473206d391def8f2"
+    },
+    {
+      "source": "original_ghost",
+      "frame": 71,
+      "points": 3000,
+      "sha256_float32_samples": "2ccdb705ceb56805b7decae1255b7bc9bee3df1efd99ea823e879f474e088d5f"
+    },
+    {
+      "source": "original_ghost",
+      "frame": 450,
+      "points": 3000,
+      "sha256_float32_samples": "84d55139006ff71390c70f694954c1ab99575eaac369a18a963a61a90d03bb16"
+    }
+  ],
+  "queries": 10,
+  "expected_retained": 7,
+  "expected_rejected": 3,
+  "scope": "Original local measured samples, no fabricated or geometrically aligned points. Offline targets establish regression labels only; this fixture is not read by mapping/navigation."
+}

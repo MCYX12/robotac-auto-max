@@ -1,0 +1,14 @@
+{
+  "created_at_utc": "2026-11-03T05:30:21.802207+00:00",
+  "state": "CANCELLED",
+  "requested_runs": 2,
+  "duration_seconds_each": 1800,
+  "scope": "local_simulation",
+  "perfect_map_certified": false,
+  "runs": [],
+  "comparisons": [],
+  "acceptance": "Each run must pass all geometry and provenance checks; all native-coordinate wall comparisons must have p95<=0.10m and p99<=0.20m in both directions.",
+  "updated_at_utc": "2026-11-03T05:36:47.366216+00:00",
+  "active_run": "hardening_repeat_20261103_01",
+  "reason": "operator_cancelled"
+}

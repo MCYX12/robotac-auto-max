@@ -1,0 +1,662 @@
+{
+  "pcd": "/workspace/dev_ws/midterm/runs/quality_hybrid_full_20261102/quality_hybrid_full_20261102_native.pcd.checkpoint.pcd",
+  "reference": "/workspace/runtime/src/robot_mujoco/zsibot_robots/xgb/unreal.xml",
+  "reference_role": "offline_validation_only",
+  "reference_walls": 32,
+  "reference_floor_area_m2": 289.40000000000003,
+  "alignment": "none; original world coordinates",
+  "floor_coverage": {
+    "0.05": 0.8640894955079474,
+    "0.1": 0.8980131306150656,
+    "0.15": 0.9106254319281272,
+    "0.2": 0.9174498963372495
+  },
+  "interior_wall_surface_coverage": {
+    "0.05": 0.7260417678484701,
+    "0.1": 0.8425643516270034,
+    "0.15": 0.8792034968431277,
+    "0.2": 0.8825643516270034
+  },
+  "wall_point_residual_m": {
+    "50": 5.76257705689337e-05,
+    "90": 0.09001640319824215,
+    "95": 0.09998743534088143,
+    "99": 0.14002155303955055
+  },
+  "wall_point_fraction_beyond": {
+    "0.05": 0.21882049758351166,
+    "0.1": 0.047024232911260705,
+    "0.2": 1.9007774179639473e-05
+  },
+  "worst_walls": [
+    {
+      "wall": "phs_Cube11",
+      "surface_coverage_10cm": 0.0,
+      "max_missing_distance_m": 2.7202601487050306
+    },
+    {
+      "wall": "phs_Cube12",
+      "surface_coverage_10cm": 0.0,
+      "max_missing_distance_m": 2.7283615342954155
+    },
+    {
+      "wall": "phs_Cube13",
+      "surface_coverage_10cm": 0.0,
+      "max_missing_distance_m": 2.710231050561107
+    },
+    {
+      "wall": "phs_Cube16",
+      "surface_coverage_10cm": 0.0,
+      "max_missing_distance_m": 2.6308221130641622
+    },
+    {
+      "wall": "phs_Cube17",
+      "surface_coverage_10cm": 0.0,
+      "max_missing_distance_m": 2.814761879708395
+    },
+    {
+      "wall": "phs_Cube22",
+      "surface_coverage_10cm": 0.0,
+      "max_missing_distance_m": 3.0240619681898098
+    },
+    {
+      "wall": "phs_Cube23",
+      "surface_coverage_10cm": 0.0,
+      "max_missing_distance_m": 2.7400723145784056
+    },
+    {
+      "wall": "phs_Cube10",
+      "surface_coverage_10cm": 0.0014285714285714286,
+      "max_missing_distance_m": 2.818023334716718
+    },
+    {
+      "wall": "phs_Cube15",
+      "surface_coverage_10cm": 0.6141463414634146,
+      "max_missing_distance_m": 1.8225449135367402
+    },
+    {
+      "wall": "phs_Cube14",
+      "surface_coverage_10cm": 0.6736585365853659,
+      "max_missing_distance_m": 1.4296728411883444
+    },
+    {
+      "wall": "phs_Cube4",
+      "surface_coverage_10cm": 0.8423076923076923,
+      "max_missing_distance_m": 0.15066487748766902
+    },
+    {
+      "wall": "phs_Cube2",
+      "surface_coverage_10cm": 0.8449180327868853,
+      "max_missing_distance_m": 0.19432884207584553
+    },
+    {
+      "wall": "phs_Cube9",
+      "surface_coverage_10cm": 0.864516129032258,
+      "max_missing_distance_m": 0.15060291651370744
+    },
+    {
+      "wall": "phs_Cube8",
+      "surface_coverage_10cm": 0.8664516129032258,
+      "max_missing_distance_m": 0.1516422006263902
+    },
+    {
+      "wall": "phs_Cube31",
+      "surface_coverage_10cm": 0.9555056179775281,
+      "max_missing_distance_m": 0.1645384756340744
+    },
+    {
+      "wall": "phs_Cube5",
+      "surface_coverage_10cm": 0.973170731707317,
+      "max_missing_distance_m": 0.14139473367594388
+    },
+    {
+      "wall": "phs_Cube3",
+      "surface_coverage_10cm": 0.9761538461538461,
+      "max_missing_distance_m": 0.14076012420804007
+    },
+    {
+      "wall": "phs_Cube30",
+      "surface_coverage_10cm": 0.9775438596491228,
+      "max_missing_distance_m": 0.14190937453574654
+    },
+    {
+      "wall": "phs_Cube29",
+      "surface_coverage_10cm": 0.9780392156862745,
+      "max_missing_distance_m": 0.147687150925227
+    },
+    {
+      "wall": "phs_Cube26",
+      "surface_coverage_10cm": 0.9788235294117648,
+      "max_missing_distance_m": 0.1314155340557382
+    },
+    {
+      "wall": "phs_Cube",
+      "surface_coverage_10cm": 0.9790163934426229,
+      "max_missing_distance_m": 0.10345029513004282
+    },
+    {
+      "wall": "phs_Cube27",
+      "surface_coverage_10cm": 0.9790322580645161,
+      "max_missing_distance_m": 0.14766216979040475
+    },
+    {
+      "wall": "phs_Cube28",
+      "surface_coverage_10cm": 0.9794117647058823,
+      "max_missing_distance_m": 0.1446094681666395
+    },
+    {
+      "wall": "phs_Cube18",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.05295635811365807
+    },
+    {
+      "wall": "phs_Cube19",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.050948382748772954
+    },
+    {
+      "wall": "phs_Cube20",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.05147852091752306
+    },
+    {
+      "wall": "phs_Cube21",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.059755215477857296
+    },
+    {
+      "wall": "phs_Cube24",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.06441899161866384
+    },
+    {
+      "wall": "phs_Cube25",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.0329727010920769
+    },
+    {
+      "wall": "phs_Cube32",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.0423141285177671
+    },
+    {
+      "wall": "phs_Cube6",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.044360506298080575
+    },
+    {
+      "wall": "phs_Cube7",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.04345974380812023
+    }
+  ],
+  "reference_sha256": "524fe86f259b28327c613b294dcff13d7a03056fe62c3de89cc72e698643f876",
+  "limitations": [
+    "Collision boxes simplify the visible mesh; floor mask seals robot-inaccessible seams.",
+    "Coverage uses nearest measured points at stated spatial tolerances, not exact surface completeness.",
+    "No rigid alignment or reference-generated points are applied to the native PCD.",
+    "These proxy checks cannot certify a perfect map or zero drift."
+  ],
+  "floor_largest_gap_radius_m": 2.397018246413926,
+  "floor_missing_area_beyond_10cm_m2": 29.515000000000004,
+  "floor_gap_clusters": [
+    {
+      "area_m2": 5.675000000000001,
+      "largest_gap_radius_m": 2.397018246413926,
+      "worst_xy_m": [
+        20.774999999999906,
+        -5.074999999999809
+      ]
+    },
+    {
+      "area_m2": 5.525,
+      "largest_gap_radius_m": 2.379873293044632,
+      "worst_xy_m": [
+        12.224999999999937,
+        5.025000000000334
+      ]
+    },
+    {
+      "area_m2": 5.455000000000001,
+      "largest_gap_radius_m": 2.3291842555690367,
+      "worst_xy_m": [
+        20.774999999999906,
+        5.025000000000334
+      ]
+    },
+    {
+      "area_m2": 5.440000000000001,
+      "largest_gap_radius_m": 2.3166368578488985,
+      "worst_xy_m": [
+        12.224999999999937,
+        -5.074999999999809
+      ]
+    },
+    {
+      "area_m2": 2.8425000000000002,
+      "largest_gap_radius_m": 0.6591887243939568,
+      "worst_xy_m": [
+        16.52499999999992,
+        -3.7249999999997905
+      ]
+    },
+    {
+      "area_m2": 2.3175000000000003,
+      "largest_gap_radius_m": 0.5610012647189396,
+      "worst_xy_m": [
+        0.47499999999998066,
+        -2.8749999999997784
+      ]
+    },
+    {
+      "area_m2": 0.1375,
+      "largest_gap_radius_m": 0.19110150352508523,
+      "worst_xy_m": [
+        16.224999999999923,
+        -4.974999999999808
+      ]
+    },
+    {
+      "area_m2": 0.05750000000000001,
+      "largest_gap_radius_m": 0.18628784407064433,
+      "worst_xy_m": [
+        -2.0250000000000106,
+        -3.5749999999997883
+      ]
+    },
+    {
+      "area_m2": 0.15250000000000002,
+      "largest_gap_radius_m": 0.18233020331649163,
+      "worst_xy_m": [
+        17.42499999999992,
+        -4.224999999999797
+      ]
+    },
+    {
+      "area_m2": 0.11500000000000002,
+      "largest_gap_radius_m": 0.17771167349983388,
+      "worst_xy_m": [
+        15.674999999999926,
+        -4.224999999999797
+      ]
+    },
+    {
+      "area_m2": 0.06000000000000001,
+      "largest_gap_radius_m": 0.1756259521114355,
+      "worst_xy_m": [
+        -2.6750000000000083,
+        0.0750000000002636
+      ]
+    },
+    {
+      "area_m2": 0.07,
+      "largest_gap_radius_m": 0.1755821000517395,
+      "worst_xy_m": [
+        -2.6750000000000083,
+        -3.0249999999997805
+      ]
+    },
+    {
+      "area_m2": 0.06000000000000001,
+      "largest_gap_radius_m": 0.17552983054803906,
+      "worst_xy_m": [
+        16.474999999999923,
+        -7.2749999999998405
+      ]
+    },
+    {
+      "area_m2": 0.035,
+      "largest_gap_radius_m": 0.1752112927815554,
+      "worst_xy_m": [
+        1.474999999999977,
+        -4.274999999999798
+      ]
+    },
+    {
+      "area_m2": 0.065,
+      "largest_gap_radius_m": 0.1751915210371105,
+      "worst_xy_m": [
+        -1.2750000000000132,
+        -4.274999999999798
+      ]
+    },
+    {
+      "area_m2": 0.05,
+      "largest_gap_radius_m": 0.1732033009929319,
+      "worst_xy_m": [
+        16.074999999999925,
+        -13.924999999999935
+      ]
+    },
+    {
+      "area_m2": 0.05,
+      "largest_gap_radius_m": 0.17280261784671058,
+      "worst_xy_m": [
+        19.274999999999913,
+        -13.924999999999935
+      ]
+    },
+    {
+      "area_m2": 0.05750000000000001,
+      "largest_gap_radius_m": 0.17253477581330354,
+      "worst_xy_m": [
+        6.024999999999961,
+        -8.724999999999861
+      ]
+    },
+    {
+      "area_m2": 0.05,
+      "largest_gap_radius_m": 0.1717690684423797,
+      "worst_xy_m": [
+        16.27499999999992,
+        -16.474999999999973
+      ]
+    },
+    {
+      "area_m2": 0.04250000000000001,
+      "largest_gap_radius_m": 0.17137018209639,
+      "worst_xy_m": [
+        24.224999999999895,
+        -8.974999999999865
+      ]
+    },
+    {
+      "area_m2": 0.05,
+      "largest_gap_radius_m": 0.17125126440392538,
+      "worst_xy_m": [
+        24.224999999999895,
+        -6.074999999999823
+      ]
+    },
+    {
+      "area_m2": 0.037500000000000006,
+      "largest_gap_radius_m": 0.17104567653533967,
+      "worst_xy_m": [
+        10.274999999999945,
+        -16.474999999999973
+      ]
+    },
+    {
+      "area_m2": 0.05,
+      "largest_gap_radius_m": 0.17098699261083877,
+      "worst_xy_m": [
+        26.774999999999885,
+        -6.074999999999823
+      ]
+    },
+    {
+      "area_m2": 0.05,
+      "largest_gap_radius_m": 0.1690008875864412,
+      "worst_xy_m": [
+        13.074999999999935,
+        -13.924999999999935
+      ]
+    },
+    {
+      "area_m2": 0.052500000000000005,
+      "largest_gap_radius_m": 0.16631095991478898,
+      "worst_xy_m": [
+        6.024999999999961,
+        -5.82499999999982
+      ]
+    },
+    {
+      "area_m2": 0.037500000000000006,
+      "largest_gap_radius_m": 0.16377541169274265,
+      "worst_xy_m": [
+        26.774999999999885,
+        -11.824999999999905
+      ]
+    },
+    {
+      "area_m2": 0.04750000000000001,
+      "largest_gap_radius_m": 0.16096747596817315,
+      "worst_xy_m": [
+        17.67499999999992,
+        -5.324999999999813
+      ]
+    },
+    {
+      "area_m2": 0.1,
+      "largest_gap_radius_m": 0.15806358320551156,
+      "worst_xy_m": [
+        17.224999999999923,
+        -5.224999999999811
+      ]
+    },
+    {
+      "area_m2": 0.022500000000000003,
+      "largest_gap_radius_m": 0.15547716641786063,
+      "worst_xy_m": [
+        4.8749999999999645,
+        1.2750000000002806
+      ]
+    },
+    {
+      "area_m2": 0.05,
+      "largest_gap_radius_m": 0.15311099133466777,
+      "worst_xy_m": [
+        17.474999999999916,
+        -4.574999999999802
+      ]
+    },
+    {
+      "area_m2": 0.035,
+      "largest_gap_radius_m": 0.1518842295806974,
+      "worst_xy_m": [
+        19.224999999999916,
+        -16.474999999999973
+      ]
+    },
+    {
+      "area_m2": 0.027500000000000004,
+      "largest_gap_radius_m": 0.15017012561107412,
+      "worst_xy_m": [
+        -1.5250000000000123,
+        4.275000000000324
+      ]
+    },
+    {
+      "area_m2": 0.0325,
+      "largest_gap_radius_m": 0.14927280134549717,
+      "worst_xy_m": [
+        8.574999999999953,
+        -8.924999999999864
+      ]
+    },
+    {
+      "area_m2": 0.027500000000000004,
+      "largest_gap_radius_m": 0.14714937275373077,
+      "worst_xy_m": [
+        25.124999999999893,
+        -16.474999999999973
+      ]
+    },
+    {
+      "area_m2": 0.025,
+      "largest_gap_radius_m": 0.14443258812316534,
+      "worst_xy_m": [
+        26.774999999999885,
+        -9.024999999999865
+      ]
+    },
+    {
+      "area_m2": 0.025,
+      "largest_gap_radius_m": 0.1431550804179721,
+      "worst_xy_m": [
+        22.174999999999905,
+        -13.924999999999935
+      ]
+    },
+    {
+      "area_m2": 0.025,
+      "largest_gap_radius_m": 0.14291166388329235,
+      "worst_xy_m": [
+        13.124999999999936,
+        -16.474999999999973
+      ]
+    },
+    {
+      "area_m2": 0.010000000000000002,
+      "largest_gap_radius_m": 0.14264458364528465,
+      "worst_xy_m": [
+        24.224999999999895,
+        -2.97499999999978
+      ]
+    },
+    {
+      "area_m2": 0.027500000000000004,
+      "largest_gap_radius_m": 0.1423905313725697,
+      "worst_xy_m": [
+        7.374999999999957,
+        -16.474999999999973
+      ]
+    },
+    {
+      "area_m2": 0.010000000000000002,
+      "largest_gap_radius_m": 0.14013485380714125,
+      "worst_xy_m": [
+        13.374999999999936,
+        1.2750000000002806
+      ]
+    },
+    {
+      "area_m2": 0.025,
+      "largest_gap_radius_m": 0.1401307969372943,
+      "worst_xy_m": [
+        24.224999999999895,
+        -12.17499999999991
+      ]
+    },
+    {
+      "area_m2": 0.0125,
+      "largest_gap_radius_m": 0.1367786370070036,
+      "worst_xy_m": [
+        19.274999999999913,
+        1.2750000000002806
+      ]
+    },
+    {
+      "area_m2": 0.025,
+      "largest_gap_radius_m": 0.13588226363783118,
+      "worst_xy_m": [
+        10.024999999999947,
+        -13.924999999999935
+      ]
+    },
+    {
+      "area_m2": 0.025,
+      "largest_gap_radius_m": 0.13503398260133678,
+      "worst_xy_m": [
+        22.324999999999903,
+        -16.474999999999973
+      ]
+    },
+    {
+      "area_m2": 0.010000000000000002,
+      "largest_gap_radius_m": 0.13366477029930082,
+      "worst_xy_m": [
+        15.574999999999928,
+        -2.1249999999997677
+      ]
+    },
+    {
+      "area_m2": 0.022500000000000003,
+      "largest_gap_radius_m": 0.13307694295252231,
+      "worst_xy_m": [
+        16.324999999999925,
+        7.275000000000366
+      ]
+    },
+    {
+      "area_m2": 0.0125,
+      "largest_gap_radius_m": 0.13225936162014768,
+      "worst_xy_m": [
+        24.224999999999895,
+        -3.1749999999997827
+      ]
+    },
+    {
+      "area_m2": 0.0125,
+      "largest_gap_radius_m": 0.12548492646480647,
+      "worst_xy_m": [
+        -1.6750000000000118,
+        -3.474999999999787
+      ]
+    },
+    {
+      "area_m2": 0.025,
+      "largest_gap_radius_m": 0.1235776237267462,
+      "worst_xy_m": [
+        13.624999999999936,
+        -1.224999999999755
+      ]
+    },
+    {
+      "area_m2": 0.022500000000000003,
+      "largest_gap_radius_m": 0.1227879110446902,
+      "worst_xy_m": [
+        7.524999999999956,
+        -1.224999999999755
+      ]
+    },
+    {
+      "area_m2": 0.027500000000000004,
+      "largest_gap_radius_m": 0.12069391291508266,
+      "worst_xy_m": [
+        26.774999999999885,
+        -14.824999999999948
+      ]
+    },
+    {
+      "area_m2": 0.0125,
+      "largest_gap_radius_m": 0.12039313205809177,
+      "worst_xy_m": [
+        6.024999999999961,
+        -14.774999999999947
+      ]
+    },
+    {
+      "area_m2": 0.0325,
+      "largest_gap_radius_m": 0.11643777702041347,
+      "worst_xy_m": [
+        26.774999999999885,
+        3.1750000000003076
+      ]
+    },
+    {
+      "area_m2": 0.025,
+      "largest_gap_radius_m": 0.1157541891499238,
+      "worst_xy_m": [
+        22.424999999999905,
+        1.2750000000002806
+      ]
+    },
+    {
+      "area_m2": 0.015000000000000003,
+      "largest_gap_radius_m": 0.11207285767471001,
+      "worst_xy_m": [
+        8.574999999999953,
+        -5.974999999999822
+      ]
+    },
+    {
+      "area_m2": 0.010000000000000002,
+      "largest_gap_radius_m": 0.11102093454890666,
+      "worst_xy_m": [
+        14.774999999999931,
+        6.975000000000362
+      ]
+    }
+  ],
+  "proxy_checks": {
+    "floor_coverage_at_10cm_ge_99_5pct": false,
+    "floor_coverage_at_20cm_ge_99_999pct": false,
+    "largest_floor_gap_radius_le_25cm": false,
+    "wall_coverage_at_15cm_ge_99_5pct": false,
+    "wall_median_reference_residual_le_5mm": true,
+    "wall_outliers_beyond_20cm_le_0_01pct": true
+  },
+  "proxy_check_pass": false,
+  "quality_state": "NEEDS_REVIEW"
+}

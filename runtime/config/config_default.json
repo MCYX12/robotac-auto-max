@@ -1,0 +1,73 @@
+{
+  "robot": {
+    "robot_type": "xxg",
+    "weapon": "",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "state_port": 25001,
+    "cmd_port": 25002,
+    "EgoView": true,
+    "synchronous_mode": false,
+    "synchronous_frequency": 10,
+    "mujoco_running": false,
+    "sensors": {
+      "camera": {
+        "position": {
+          "x": 0.18,
+          "y": 0,
+          "z": 0.30
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        },
+        "height": 1080,
+        "width": 1920,
+        "sensor_type": "rgb",
+        "topic": "/front_camera/image/compressed",
+        "fov": 120,
+        "frequency": 10
+      },
+      "depth_sensor": {
+        "position": {
+          "x": 0.18,
+          "y": 0,
+          "z": 0.30
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        },
+        "height": 480,
+        "width": 640,
+        "sensor_type": "depth",
+        "topic": "/front_depth/image",
+        "fov": 120,
+        "frequency": 10,
+        "cloudmode": false
+      },
+      "lidar": {
+        "position": {
+          "x": 0.18,
+          "y": 0,
+          "z": 0.30
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        },
+        "sensor_type": "mid360",
+        "topic": "/front_lidar",
+        "draw_points": false,
+        "random_scan": false,
+        "frequency": 10
+      }
+    }
+  }
+}

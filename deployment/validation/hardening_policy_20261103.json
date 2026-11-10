@@ -1,0 +1,32 @@
+{
+  "frozen_at": "2026-11-03T13:27:48.669094+08:00",
+  "policy": {
+    "version": "2026-11-03.v3",
+    "footprint_margin_m": 0.35,
+    "maximum_footprint_outlier_fraction": 0.0001,
+    "minimum_per_wall_coverage_at_20cm": 0.995,
+    "maximum_per_wall_gap_m": 0.25,
+    "minimum_z_m": -0.3,
+    "maximum_z_m": 3.35,
+    "outlier_cluster_voxel_m": 0.25,
+    "top_strip_heights_m": [
+      2.75,
+      2.85,
+      2.95
+    ],
+    "minimum_top_strip_coverage_at_20cm": 0.995,
+    "maximum_top_strip_gap_m": 0.25
+  },
+  "auditor_sha256": "f5eb62f11c5437ea220588d0921ea41ee997615629dc7aca71b033d07a86bff7",
+  "new_checks": "12 checks: original six unchanged, plus all-height footprint, height bounds, per-wall20cm and max gap, upper-strip20cm and max gap.",
+  "rationale": "35cm footprint margin covers measured trim and simplified reference differences; additional per-wall and top-strip 20cm coverage>=99.5% and max gap<=25cm use existing tolerances. Upper strip is collision-wall observation support, not a surveyed mesh.",
+  "previous_map_top_max_gap_m": 0.42354,
+  "old_results_preserved": true,
+  "adaptive_mapping": "Top support inferred solely from neighboring live measured height bins with at least 3 points, up to 1m neighborhood, targets .3..3.0m; reference model remains offline only.",
+  "live_structure_viewpoint_distance_m": [
+    2.2,
+    2.8
+  ],
+  "implementation_frozen_at": "2026-11-03T18:49:12.936821+08:00",
+  "observation_los_endpoint": "Only known occupied cells within 0.20m of observation target are transparent in temporary visibility mask; unknown and navigation masks unchanged."
+}

@@ -1,0 +1,140 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.35
+      Cell Size: 1
+      Class: rviz_default_plugins/Grid
+      Color: 110; 110; 115
+      Enabled: true
+      Name: Ground Grid
+      Plane: XY
+      Plane Cell Count: 50
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 0.80
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 3.3
+        Min Value: -0.25
+        Value: true
+      Axis: Z
+      Channel Name: z
+      Class: rviz_default_plugins/PointCloud2
+      Color Transformer: AxisColor
+      Decay Time: 0
+      Enabled: true
+      Name: Task1 Native 3D Point Cloud
+      Position Transformer: XYZ
+      Size (Pixels): 2
+      Size (m): 0.025
+      Style: Points
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robotac/task2/known_cloud
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 0.32
+      Class: rviz_default_plugins/Map
+      Color Scheme: map
+      Draw Behind: true
+      Enabled: true
+      Name: Task1 PCD Navigation Map
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robotac/task2/known_map
+      Use Timestamp: false
+      Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: Robot Live Pose Heading Trail and Task Status
+      Namespaces:
+        robot_pose: true
+        robot_status: true
+        robot_trail: true
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robotac/task2/robot_markers
+      Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: Official Treasure Mesh Simulation
+      Namespaces:
+        official_cashbox_mesh_simulation: true
+        local_sim_treasure_labels: true
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robotac/task2/sim_box_markers
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 20; 120; 255
+      Enabled: true
+      Line Style: Lines
+      Line Width: 0.05
+      Name: Task2 Active Path
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0.08
+      Pose Style: None
+      Topic:
+        Depth: 1
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robotac/task2/path
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 32; 34; 38
+    Fixed Frame: world
+    Frame Rate: 20
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+    - Class: rviz_default_plugins/Measure
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 45
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Name: Current View
+      Pitch: 1.30
+      Target Frame: <Fixed Frame>
+      Yaw: 0.80
+      Value: Orbit (rviz)
+    Saved: ~
+Window Geometry:
+  Height: 900
+  Width: 1440
+  X: 80
+  Y: 60

@@ -1,0 +1,132 @@
+robotac_task2_pcd_map_server:
+  ros__parameters:
+    pcd_path: ""
+    cloud_topic: /robotac/task2/known_cloud
+    status_topic: /robotac/task2/map_status
+    frame_id: world
+    maximum_points: 1500000
+
+robotac_task2_cloud_to_grid:
+  ros__parameters:
+    cloud_topic: /robotac/task2/known_cloud
+    grid_topic: /robotac/task2/known_map
+    resolution: 0.10
+    margin: 2.0
+    ground_min_z: -0.20
+    ground_max_z: 0.18
+    obstacle_min_z: 0.22
+    obstacle_max_z: 1.60
+    max_input_points: 1500000
+    max_grid_cells: 4000000
+    free_fill_radius_cells: 2
+
+robotac_task2_controller:
+  ros__parameters:
+    map_topic: /robotac/task2/known_map
+    goal_topic: /robotac/task2/goal
+    path_topic: /robotac/task2/path
+    result_topic: /robotac/task2/result
+    status_topic: /robotac/task2/controller_status
+    mission_enable_topic: /robotac/mission_enable
+    contact_mode_topic: /robotac/contact_mode
+    odom_topic: /odom/mujoco_odom
+    cmd_vel_topic: /cmd_vel
+    robot_radius: 0.32
+    inflation_margin: 0.12
+    local_observation_radius: 0.50
+    goal_tolerance: 0.35
+    waypoint_tolerance: 0.22
+    maximum_linear_speed: 0.35
+    maximum_yaw_rate: 0.45
+    heading_kp: 1.2
+    control_hz: 20.0
+    replan_period: 3.0
+    # Zero means an immutable, transient-local known map. Task one keeps its
+    # live-map watchdog at 1.5 seconds.
+    maximum_map_age: 0.0
+    stuck_timeout: 18.0
+    minimum_progress: 0.12
+    maximum_recoveries: 3
+    recovery_duration: 4.0
+    safety_state_topic: /robotac/control_safety_state
+    front_obstacle_recovery_delay: 1.5
+    contact_goal_mode: true
+    contact_goal_tolerance: 0.18
+    maximum_contact_approach: 1.00
+    contact_maximum_linear_speed: 0.08
+    contact_heading_threshold: 0.35
+    contact_timeout: 10.0
+
+robotac_task2_mission_manager:
+  ros__parameters:
+    map_topic: /robotac/task2/known_map
+    map_status_topic: /robotac/task2/map_status
+    odom_topic: /odom/mujoco_odom
+    goal_topic: /robotac/task2/goal
+    controller_result_topic: /robotac/task2/result
+    mission_enable_topic: /robotac/mission_enable
+    status_topic: /robotac/task2/status
+    status_path: /workspace/finals_ws/output/task2_status.json
+    start_service: /robotac/task2/start
+    stop_service: /robotac/task2/stop
+    expected_target_count: 5
+    robot_radius: 0.32
+    inflation_margin: 0.12
+    route_snap_radius: 20
+    result_coordinate_tolerance: 0.05
+    maximum_target_retries: 1
+    hard_runtime: 1800.0
+    auto_start: false
+
+robotac_task2_sdk_twist_bridge:
+  ros__parameters:
+    cmd_vel_topic: /cmd_vel
+    safe_cmd_topic: /robotac/safe_cmd_vel
+    contact_mode_topic: /robotac/contact_mode
+    lidar_topic: /front_lidar
+    odom_topic: /odom/mujoco_odom
+    local_ip: 127.0.0.1
+    local_port: 43988
+    robot_ip: 127.0.0.1
+    dry_run: true
+    update_hz: 20.0
+    command_timeout: 0.30
+    sensor_timeout: 0.50
+    max_vx: 0.45
+    max_vy: 0.20
+    max_wz: 0.60
+    max_ax: 0.30
+    max_ay: 0.25
+    max_aw: 0.80
+    front_stop_distance: 0.65
+    contact_mode_timeout: 0.30
+    contact_stop_distance: 0.08
+    contact_max_forward_speed: 0.10
+    require_upright: true
+    auto_stand: true
+    stand_retry_period: 5.0
+    stand_settle_time: 2.0
+
+robotac_task2_box_simulator:
+  ros__parameters:
+    odom_topic: /odom/mujoco_odom
+    goal_topic: /robotac/task2/goal
+    mission_enable_topic: /robotac/mission_enable
+    result_topic: /robotac/task2/result
+    event_topic: /robotac/task2/sim_box_events
+    marker_topic: /robotac/task2/sim_box_markers
+    official_mesh_resource: package://robotac_finals/meshes/official_cashbox.glb
+    event_path: /workspace/finals_ws/output/task2_sim_events.json
+    expected_target_count: 5
+    trigger_radius: 0.22
+
+robotac_task2_robot_visualizer:
+  ros__parameters:
+    odom_topic: /odom/mujoco_odom
+    marker_topic: /robotac/task2/robot_markers
+    safety_state_topic: /robotac/control_safety_state
+    task_status_topic: /robotac/task2/status
+    frame_id: world
+    publish_hz: 10.0
+    trail_spacing: 0.08
+    trail_max_points: 4000

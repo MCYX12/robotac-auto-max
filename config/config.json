@@ -1,0 +1,25 @@
+{
+  "robot": {
+    "sensors": {
+      "depth_sensor": {
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0.3
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        },
+        "height": 480,
+        "width": 640,
+        "sensor_type": "depth",
+        "topic": "/front_depth/image/compressed",
+        "fov": 120,
+        "frequency": 10,
+        "cloudmode": false
+      }
+    }
+  }
+}

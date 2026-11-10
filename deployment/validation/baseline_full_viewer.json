@@ -1,0 +1,194 @@
+{
+  "pcd": "/workspace/dev_ws/midterm/runs/repair_full_viewer_20261102/repair_full_viewer_20261102_native.pcd",
+  "reference": "/workspace/runtime/src/robot_mujoco/zsibot_robots/xgb/unreal.xml",
+  "reference_role": "offline_validation_only",
+  "reference_walls": 32,
+  "reference_floor_area_m2": 289.40000000000003,
+  "alignment": "none; original world coordinates",
+  "floor_coverage": {
+    "0.05": 0.988260193503801,
+    "0.1": 0.9968987560469937,
+    "0.15": 0.9992225293711127,
+    "0.2": 0.9998013130615065
+  },
+  "interior_wall_surface_coverage": {
+    "0.05": 0.9355998057309374,
+    "0.1": 0.9947158814958718,
+    "0.15": 0.9991646430305974,
+    "0.2": 0.9995337542496358
+  },
+  "wall_point_residual_m": {
+    "50": 0.024302854537963825,
+    "90": 0.09972595214843664,
+    "95": 0.14074423170089684,
+    "99": 0.2943241405487058
+  },
+  "wall_point_fraction_beyond": {
+    "0.05": 0.26528195396422394,
+    "0.1": 0.09952782443965516,
+    "0.2": 0.0227954790314521
+  },
+  "worst_walls": [
+    {
+      "wall": "phs_Cube13",
+      "surface_coverage_10cm": 0.9051851851851852,
+      "max_missing_distance_m": 0.39411807882177374
+    },
+    {
+      "wall": "phs_Cube31",
+      "surface_coverage_10cm": 0.9865168539325843,
+      "max_missing_distance_m": 0.13724323128400936
+    },
+    {
+      "wall": "phs_Cube29",
+      "surface_coverage_10cm": 0.9890196078431372,
+      "max_missing_distance_m": 0.14820380514006895
+    },
+    {
+      "wall": "phs_Cube27",
+      "surface_coverage_10cm": 0.9922580645161291,
+      "max_missing_distance_m": 0.13721438082017404
+    },
+    {
+      "wall": "phs_Cube30",
+      "surface_coverage_10cm": 0.9929824561403509,
+      "max_missing_distance_m": 0.1385448795597467
+    },
+    {
+      "wall": "phs_Cube15",
+      "surface_coverage_10cm": 0.9936585365853658,
+      "max_missing_distance_m": 0.13984004252969587
+    },
+    {
+      "wall": "phs_Cube14",
+      "surface_coverage_10cm": 0.9941463414634146,
+      "max_missing_distance_m": 0.13902920703924523
+    },
+    {
+      "wall": "phs_Cube28",
+      "surface_coverage_10cm": 0.994313725490196,
+      "max_missing_distance_m": 0.1327465740901109
+    },
+    {
+      "wall": "phs_Cube2",
+      "surface_coverage_10cm": 0.9954098360655738,
+      "max_missing_distance_m": 0.11853587281365215
+    },
+    {
+      "wall": "phs_Cube8",
+      "surface_coverage_10cm": 0.9954838709677419,
+      "max_missing_distance_m": 0.13514238695676276
+    },
+    {
+      "wall": "phs_Cube4",
+      "surface_coverage_10cm": 0.9961538461538462,
+      "max_missing_distance_m": 0.12141865498350679
+    },
+    {
+      "wall": "phs_Cube26",
+      "surface_coverage_10cm": 0.9980392156862745,
+      "max_missing_distance_m": 0.12688322837102656
+    },
+    {
+      "wall": "phs_Cube9",
+      "surface_coverage_10cm": 0.9987096774193548,
+      "max_missing_distance_m": 0.11711999886777642
+    },
+    {
+      "wall": "phs_Cube",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.097750918920202
+    },
+    {
+      "wall": "phs_Cube10",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.045125646710464
+    },
+    {
+      "wall": "phs_Cube11",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.04563607857813838
+    },
+    {
+      "wall": "phs_Cube12",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.05829949704826644
+    },
+    {
+      "wall": "phs_Cube16",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.0414906988268958
+    },
+    {
+      "wall": "phs_Cube17",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.0410678318133453
+    },
+    {
+      "wall": "phs_Cube18",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.03278286786716234
+    },
+    {
+      "wall": "phs_Cube19",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.0392504514894973
+    },
+    {
+      "wall": "phs_Cube20",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.041958916463470136
+    },
+    {
+      "wall": "phs_Cube21",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.04222013326213647
+    },
+    {
+      "wall": "phs_Cube22",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.04217615709781306
+    },
+    {
+      "wall": "phs_Cube23",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.04146198763566488
+    },
+    {
+      "wall": "phs_Cube24",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.04905020968150075
+    },
+    {
+      "wall": "phs_Cube25",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.03308409112589035
+    },
+    {
+      "wall": "phs_Cube3",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.05928471658536571
+    },
+    {
+      "wall": "phs_Cube32",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.04167309921626708
+    },
+    {
+      "wall": "phs_Cube5",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.07963226520094428
+    },
+    {
+      "wall": "phs_Cube6",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.04100032573069129
+    },
+    {
+      "wall": "phs_Cube7",
+      "surface_coverage_10cm": 1.0,
+      "max_missing_distance_m": 0.03139090276121219
+    }
+  ],
+  "strict_check_pass": false
+}

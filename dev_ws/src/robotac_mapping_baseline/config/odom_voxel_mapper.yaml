@@ -1,0 +1,29 @@
+odom_voxel_mapper:
+  ros__parameters:
+    lidar_topic: /front_lidar
+    odom_topic: /odom/mujoco_odom
+    map_topic: /robotac/odom_map
+    save_service: /robotac/save_odom_map
+    save_path: /workspace/dev_ws/maps/odom_baseline.pcd
+    map_frame: world
+    voxel_size: 0.025
+    min_range: 0.20
+    max_range: 40.0
+    max_odom_time_offset: 0.02
+    process_every_n_scans: 1
+    world_z_min: -0.25
+    world_z_max: 3.30
+    lidar_translation: [0.0, 0.0, 0.30]
+    lidar_rpy: [0.0, 0.0, 0.0]
+    self_filter_enabled: true
+    ground_snap_enabled: false
+    ground_plane_z: 0.0
+    ground_snap_tolerance: 0.10
+    maximum_mapping_yaw_rate: 0.30
+    self_min: [-0.45, -0.30, 0.00]
+    self_max: [0.45, 0.30, 0.55]
+    publish_every_n_scans: 100
+    preview_z_min: -1000000.0
+    preview_z_max: 1000000.0
+    preview_minimum_voxel_observations: 1
+    checkpoint_every_n_scans: 600

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>robotac_mapping_baseline</name>
+  <version>0.1.0</version>
+  <description>Odom-anchored online voxel mapping baseline for ROBOTAC.</description>
+  <maintainer email="robotac@example.com">ROBOTAC Team</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>pcl_conversions</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

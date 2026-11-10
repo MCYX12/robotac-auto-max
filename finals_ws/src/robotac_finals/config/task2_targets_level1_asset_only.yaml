@@ -1,0 +1,11 @@
+# Diagnostic evidence only. UE runtime exposed five BP_CashBox component
+# locations, but none was reachable in the task-one PCD navigation grid. This
+# profile is intentionally blocked from mission start and must not be used as
+# a competition target profile.
+robotac_task2_mission_manager:
+  ros__parameters:
+    target_profile_kind: diagnostic_asset_only
+    target_names: [cashbox_1, cashbox_2, cashbox_3, cashbox_4, cashbox_5]
+    target_coordinates: [1.30, -9.70, 1.30, -8.60, 1.30, -7.30, 1.30, -10.90, 1.30, -12.40]
+    target_coordinate_provenance: packaged_Level1_asset_only_not_route_verified
+    targets_verified: false

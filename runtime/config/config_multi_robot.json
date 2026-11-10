@@ -1,0 +1,39 @@
+{
+    "robot1": {
+        "robot_type": "xgb",
+        "weapon": "",
+        "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "state_port": 25001,
+        "cmd_port": 25002,
+        "EgoView": true,
+        "synchronous_mode": false,
+        "synchronous_frequency": 10,
+         "mujoco_running": false,
+        "sensors": {
+ 
+        }
+    },
+    "robot2": {
+        "robot_type": "xgb",
+        "weapon": "",
+        "position": {
+            "x": 200.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "state_port": 25011,
+        "cmd_port": 25012,
+        "EgoView": false,
+        "synchronous_mode": false,
+        "synchronous_frequency": 10,
+         "mujoco_running": false,
+        "sensors": {
+ 
+        }
+    }
+
+}
