@@ -1,179 +1,327 @@
-# ROBOTAC 自主建图（仿真）
+<p align="center">
+  <img src="docs/assets/banner.png" alt="ROBOTAC Autonomous Mapping" width="100%">
+</p>
 
-[![License](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](LICENSE)
-![ROS 2](https://img.shields.io/badge/ROS%202-Humble-22314E)
-![Python](https://img.shields.io/badge/Python-3.10-3776AB)
-![Platform](https://img.shields.io/badge/platform-Linux%20%2B%20Docker-2496ED)
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSD--3--Clause-22c55e?style=flat-square" alt="License"></a>
+  <img src="https://img.shields.io/badge/ROS%202-Humble-22314E?style=flat-square" alt="ROS 2 Humble">
+  <img src="https://img.shields.io/badge/Python-3.10-3776AB?style=flat-square" alt="Python 3.10">
+  <img src="https://img.shields.io/badge/C%2B%2B-17-00599C?style=flat-square" alt="C++17">
+  <img src="https://img.shields.io/badge/Docker-NVIDIA-2496ED?style=flat-square" alt="Docker + NVIDIA">
+  <img src="https://img.shields.io/github/last-commit/MCYX12/robotac-auto-max?style=flat-square&color=0ea5e9" alt="Last commit">
+</p>
 
-ROBOTAC 赛事“全自主建图”任务的仿真实现。机器狗在 **UeSim（UE5）+ MuJoCo** 仿真场景中全自主探索、避障、建图，结束时输出**原生 PCD 点云**，并附带预览图、质量报告、SHA256 与源码/标定指纹。
+<p align="center">
+  <strong>机器狗全自主建图 · 仿真闭环 · 可审计交付</strong><br>
+  <sub>UeSim (UE5) + MuJoCo + ROS 2 Humble · 里程计锚定体素融合 · 原生 PCD + 12 项几何门禁</sub>
+</p>
 
-目标不是“跑起来就算完成”：程序要求传感器真实有数据、坐标系不跳变、关键组件不退出、磁盘充足，并在采集后做几何质量检查；任一条不满足都不会报 `COMPLETED`。
+---
 
-> 仓库包含算法源码、部署脚本、测试与验证记录。厂商仿真运行程序（约 7.5 GB）**未入库**，运行前需按 [`runtime/README.md`](runtime/README.md) 放回。所有结论均来自本机仿真，不代表实机验收。
+ROBOTAC 赛事“全自主建图”任务的完整仿真实现。机器狗在 UE5 场景中自主探索、避障、建图，结束时输出**赛事提交格式的原生 PCD**，并附预览图、质量报告、SHA256 与源码/标定指纹。
 
-![建图结果：测量墙面点云（左）与地面覆盖率缺口（右）](deployment/validation/baseline_full_viewer.png)
+设计目标不是“跑起来就算完成”：传感器必须真实有数据、坐标系不得跳变、关键组件不得退出、磁盘必须充足，采集后还要通过 12 项固定容差的几何检查——任一条不满足都不会报 `COMPLETED`。
 
-## 特性
+| 采集预算 | 速度上限 | 体素分辨率 | 导航栅格 | 质量门禁 |
+| :---: | :---: | :---: | :---: | :---: |
+| **30 min** | **0.45 m/s** | **2.5 cm** | **10 cm** | **12 项** |
 
-- **一条命令跑完全流程**：启动仿真 → 传感器校验 → 自主探索建图 → 稳定停车补扫 → 保存 → 质量核验。
-- **全自主策略**：启动环视 → 安全前沿探索 → 采墙 → 基于实时点云的墙面/地面/顶部补扫，补扫要求新视角，避免原地重复。
-- **里程计锚定体素融合（C++）**：2.5 cm 体素、深度地面采样、近地面归一化、扫描面滤波、时序置信度与多帧支持。
-- **真实性保护**：传感器中断、坐标系跳变、位姿跳变、组件退出、磁盘不足时拒绝报成功；故障与主动停止都保留部分地图与 checkpoint。
-- **可复现与可审计**：每轮结果记录 PCD、预览、日志、质量报告、SHA256、程序/标定版本指纹；质量判定为 fail-closed。
-- **有明确边界**：`COMPLETED` 只表示通过设定的几何检查，不是官方评分，也不证明任意环境绝对零漂移。
+> [!IMPORTANT]
+> 仓库不包含约 7.5 GB 的厂商仿真运行文件（UeSim / MuJoCo / 控制器）。克隆后需按 [`runtime/README.md`](runtime/README.md) 放回 `runtime/src/`，并用 `deployment/SHA256SUMS.runtime.txt` 校验；哈希不符时程序会直接拒绝启动。
+
+<p align="center">
+  <a href="#核心能力">核心能力</a> ·
+  <a href="#系统架构">系统架构</a> ·
+  <a href="#任务状态机">状态机</a> ·
+  <a href="#质量门禁">质量门禁</a> ·
+  <a href="#快速开始">快速开始</a> ·
+  <a href="#仓库结构">仓库结构</a> ·
+  <a href="#实测记录">实测</a> ·
+  <a href="#已知限制">限制</a>
+</p>
+
+## 核心能力
+
+| 能力 | 实现 | 关键约束 |
+| --- | --- | --- |
+| **全自主探索** | 启动环视 → 安全前沿探索 → 采墙 → 基于实时点云的墙面/地面/顶部补扫 | 补扫必须提供新视角（≥ 20° 或 ≥ 0.75 m），不重复采样 |
+| **鲁棒建图** | 里程计锚定体素融合 + 深度融合地面采样 + 扫描面滤波 + 时序置信度 | 2.5 cm 体素；快速转向帧与近地面点单独处理 |
+| **真实性保护** | 传感器新鲜度、位姿跳变、组件存活、磁盘余量四类看门狗 | 任一异常都不允许报成功，只保存部分地图与 checkpoint |
+| **可审计交付** | 每轮记录 SHA256、源码/标定/厂商程序指纹、质量报告与终态原因 | 判定 fail-closed；运行期文件被改动即判失败 |
 
 ## 系统架构
 
+**运行时闭环**：仿真提供传感器数据，导航栈据此决策，速度指令经 SDK 回到仿真。
+
 ```mermaid
 flowchart LR
-  UE["UeSim 场景<br/>(UE5)"] --> SEN["传感器<br/>深度 640×480 · 雷达 · 里程计"]
-  MJ["MuJoCo 物理"] --> UE
-  SEN -->|"/front_depth/image/compressed<br/>/front_lidar · /odom/mujoco_odom"| EXP["robotac_finals<br/>占据栅格 · 前沿选择 · 导航"]
-  EXP -->|"/cmd_vel"| BR["sdk_twist_bridge"]
-  BR --> SDK["ZsiBot SDK"]
-  SDK --> MJ
-  SEN --> MAP["robotac_mapping_baseline<br/>里程计锚定体素融合"]
-  MAP --> PCD["native.pcd + 预览"]
-  PCD --> QA["质量检查 · 几何审计 · 溯源"]
+    subgraph SIM["仿真"]
+        UE["UeSim · UE5<br/>场景 / 渲染"]
+        MJ["MuJoCo<br/>物理与关节"]
+        MC["robot_mc<br/>厂商控制器"]
+        UE <--> MJ
+        MJ <--> MC
+    end
+
+    subgraph SENSE["传感器"]
+        L["/front_lidar<br/>10 Hz"]
+        D["/front_depth/image/compressed<br/>640×480 · 10 Hz"]
+        O["/odom/mujoco_odom<br/>~200 Hz"]
+    end
+
+    subgraph NAV["导航与探索"]
+        G["ray_occupancy_grid<br/>10 cm 射线栅格"]
+        F["frontier_selector<br/>信息量 / 可达性 / 安全性"]
+        C["exploration_controller<br/>局部避障 · 卡住检测"]
+        B["sdk_twist_bridge<br/>/cmd_vel → SDK"]
+    end
+
+    UE --> L
+    UE --> D
+    UE --> O
+    L --> G
+    O --> G
+    G --> F --> C --> B --> MC
 ```
 
-- **导航与探索**：激光构建实时射线占据栅格；前沿选择按信息量、可达性与安全性打分；控制器做局部避障与卡住检测。
-- **建图**：以 MuJoCo 里程计为锚，逐帧把雷达点写入体素；深度融合深度地面采样，并对近地面做归一化。
-- **质量**：保存后用离线几何审计按固定容差检查地面覆盖率、最大缺口、墙面覆盖率/残差/离群点、顶部条带等 11 项，全部通过才判定 `PASS_PROXY_CHECKS`。
+**建图与交付**：点云先写体素融合，再经基础校验、几何审计，最后连同指纹一起落盘。
 
-## 目录结构
-
-```text
-.
-├── docker.sh                     # 容器管理 + 一键 start/stop/status/repair/build
-├── build.sh                      # 容器内 colcon 构建两个 ROS 2 包
-├── run_auto_max.sh               # 容器内启动一次自主建图会话
-├── install_dependencies.sh       # Ubuntu 22.04 / ROS Humble 依赖
-├── config/config.json            # 仿真传感器配置（深度相机等）
-├── deps/zsibot_sdk/              # 厂商 SDK（x86_64 动态库 + Python 绑定）
-├── deployment/
-│   ├── control.py                # start / stop / status / recover 生命周期
-│   ├── simulation.py             # 托管 UeSim、MuJoCo、控制器三个进程
-│   ├── check.py                  # 启动前有界就绪检查
-│   ├── run_session.py            # 单轮任务监督：保存、校验、状态落盘
-│   ├── audit_run.py              # 已保存地图的离线几何审计（fail-closed）
-│   ├── provenance.py             # 源码/配置/厂商程序指纹
-│   ├── telemetry.py              # 传感器新鲜度、非空与标定检查
-│   ├── observer.py / gpu_probe.py / common.py
-│   ├── tests/                    # 15 组 pytest 合约测试 + 录制的夹具
-│   ├── validation/               # 时序、覆盖率、表面组成等离线验证工具与报告
-│   └── SHA256SUMS.runtime.txt    # 厂商程序校验清单
-├── dev_ws/
-│   ├── src/robotac_mapping_baseline/   # C++ 建图包（体素融合 / GICP）
-│   ├── tools/                          # PCD 预览、质量报告、深度桥接
-│   └── midterm/                        # 自主建图 launch 与运行脚本
-├── finals_ws/
-│   ├── src/robotac_finals/             # 探索、导航、任务管理、可视化
-│   └── test/                           # 点云产物校验脚本
-├── runtime/                      # 厂商运行配置 + 许可证（src/ 未入库）
-└── docs/                         # 使用说明、迁移说明、验证记录与历史清单
+```mermaid
+flowchart LR
+    D["深度 · 10 Hz"] --> Q["depth_ground_bridge<br/>深度地面候选"]
+    L["雷达 · 10 Hz"] --> V
+    Q --> V["odom_voxel_mapper<br/>2.5 cm 体素融合"]
+    O["里程计 · ~200 Hz"] --> V
+    V --> QA["pcd_quality_report<br/>+ artifact validator"]
+    QA --> AU["audit_run<br/>12 项几何检查"]
+    AU --> P["native.pcd<br/>预览 · SHA256 · 指纹"]
 ```
+
+### ROS 2 接口
+
+| 话题 | 类型 | 频率 / 规格 | 用途 |
+| --- | --- | --- | --- |
+| `/front_lidar` | `sensor_msgs/PointCloud2` | 10 Hz | 建图输入、导航射线栅格 |
+| `/front_depth/image/compressed` | `sensor_msgs/CompressedImage` | 10 Hz · 640×480 | 深度融合地面采样 |
+| `/odom/mujoco_odom` | `nav_msgs/Odometry` | ~200 Hz | 位姿锚定与一致性检查 |
+| `/robotac/nav_map` | `nav_msgs/OccupancyGrid` | 10 cm 栅格 | 导航占据地图（不参与评分点云） |
+| `/robotac/finals/score_cloud` | `sensor_msgs/PointCloud2` | 抽稀 | 评分点云（建图输出，RViz 调试） |
+| `/cmd_vel` | `geometry_msgs/Twist` | — | 速度指令，经 SDK 下发 |
+| `/robotac/depth_ground_candidates` | `sensor_msgs/PointCloud2` | — | 深度地面候选点 |
+| `/robotac/filtered_lidar` | `sensor_msgs/PointCloud2` | — | 扫描面滤波后的雷达点 |
+| `/robotac/finals/preview_cloud` | `sensor_msgs/PointCloud2` | 抽稀 | RViz 结构预览 |
+
+导航栅格与预览点云是**独立通路**：它们不影响 `score_cloud` 与最终提交的 PCD。
+
+## 任务状态机
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> STARTING: 创建运行目录
+    STARTING --> RUNNING: 预检 + 指纹通过
+    STARTING --> FAILED: 预检 / 指纹失败
+    RUNNING --> SAVING: 时长到 / MAP_SAVED
+    RUNNING --> STOPPING: 操作者停止 / 基础设施故障
+    RUNNING --> FAILED: 组件退出 / 位姿跳变 / 传感器中断
+    STOPPING --> CANCELLED: 部分地图已保存
+    STOPPING --> FAILED: 保存超时
+    SAVING --> VALIDATING: PCD + SHA256 落盘
+    SAVING --> FAILED: 质量报告 / 预览失败
+    VALIDATING --> COMPLETED: 12 项检查全部通过
+    VALIDATING --> NEEDS_REVIEW: 任一检查未通过
+    COMPLETED --> [*]
+    NEEDS_REVIEW --> [*]
+    CANCELLED --> [*]
+    FAILED --> [*]
+```
+
+| 终态 | 含义 | 退出码 |
+| --- | --- | :---: |
+| `COMPLETED` | 采集完成且 12 项几何检查全部通过 | 0 |
+| `NEEDS_REVIEW` | 地图已保存，但几何质量未达标 | 5 |
+| `FAILED` | 预检失败、组件退出、传感器中断、落盘或审计失败 | 2 / 4 |
+| `CANCELLED` | 操作者主动停止，已尽力保存部分地图 | 130 |
+
+## 质量门禁
+
+保存后由 `deployment/audit_run.py` 离线审计，全部为布尔判定且 **fail-closed**；报告同时写入 `result.json` 与 `地图质量检查.md`。
+
+| # | 检查项 | 阈值 |
+| :-: | --- | --- |
+| 1 | 地面覆盖率 @10 cm | ≥ 99.5% |
+| 2 | 地面覆盖率 @20 cm | ≥ 99.999% |
+| 3 | 最大地面缺口半径 | ≤ 25 cm |
+| 4 | 墙面覆盖率 @15 cm | ≥ 99.5% |
+| 5 | 墙面中位残差（对参考几何） | ≤ 5 mm |
+| 6 | 墙面离群点（>20 cm） | ≤ 0.01% |
+| 7 | 全高度足迹离群点（>35 cm） | ≤ 0.01% |
+| 8 | 全部点位于设定高度范围 | 必须为真 |
+| 9 | 单面墙覆盖率 @20 cm | ≥ 99.5% |
+| 10 | 单面墙最大缺口 | ≤ 25 cm |
+| 11 | 顶部条带覆盖率 @20 cm | ≥ 99.5% |
+| 12 | 顶部条带最大缺口 | ≤ 25 cm |
+
+> [!NOTE]
+> 覆盖率按明确的距离容差计算，是几何代理指标，不是赛事官方评分。它能证明“在给定容差下没有明显缺口”，不能证明任意环境绝对零漂移。
 
 ## 快速开始
 
-**环境要求**
+**前置条件**
 
-- 宿主机 Ubuntu 24.04，NVIDIA GPU 与可用的 Docker GPU 运行时；
-- 本地镜像 `robotac-humble:local`（Ubuntu 22.04 + ROS 2 Humble + Python 3.10 + PCL/OpenCV/SciPy）；
-- 厂商仿真运行文件已放回 `runtime/src/`（见 [`runtime/README.md`](runtime/README.md)），并可用 `deployment/SHA256SUMS.runtime.txt` 校验。
+| 项目 | 要求 |
+| --- | --- |
+| 宿主机 | Ubuntu 24.04，NVIDIA GPU（Vulkan 可用） |
+| 容器 | Docker + NVIDIA Container Toolkit |
+| 镜像 | `robotac-humble:local`（Ubuntu 22.04 / ROS 2 Humble / Python 3.10 / PCL / OpenCV / SciPy） |
+| 厂商运行文件 | 放回 `runtime/src/`（约 7.5 GB），见 [`runtime/README.md`](runtime/README.md) |
+| 磁盘 | 启动前至少 2 GB 可用；保存前至少 512 MB |
 
 ```bash
 git clone https://github.com/MCYX12/robotac-auto-max.git
 cd robotac-auto-max
 
-# 1. 构建两个 ROS 2 包（容器内）
+# 1. 校验厂商运行文件
+sha256sum -c deployment/SHA256SUMS.runtime.txt
+
+# 2. 构建两个 ROS 2 包（容器内，2.5 cm 体素建图为 C++ Release）
 bash docker.sh build
 
-# 2. 启动：仿真 + 传感器校验 + 自主建图 + 保存 + 质量核验
+# 3. 一键跑完：仿真 → 预检 → 自主探索建图 → 保存 → 质量审计
 ROBOTAC_HEADLESS=0 MIDTERM_RVIZ=1 bash docker.sh start
 
-# 3. 查看状态 / 中途停止（另开终端）
+# 4. 状态与停止（另开终端）
 bash docker.sh status
 bash docker.sh stop
 ```
 
-结果默认写入 `dev_ws/midterm/runs/<运行编号>/`，包含 `_native.pcd`、`_preview.png`、`地图质量检查.md`、`result.json`、`SHA256SUMS.txt` 等。
+**运行产物**
+
+```text
+dev_ws/midterm/runs/<run_id>/
+├── <run_id>_native.pcd        # 原生点云（提交物）
+├── <run_id>_preview.png       # 俯视 / 侧视预览
+├── <run_id>_quality.json      # 点云代理指标
+├── 地图质量检查.md             # 可读版质量报告
+├── result.json                # 终态、原因、耗时、点数
+├── provenance.json            # 源码 / 标定 / 厂商程序指纹
+├── provenance_check.json      # 运行期一致性校验
+├── SHA256SUMS.txt             # PCD 校验和
+└── autonomous.log             # 全量运行日志
+```
 
 **常用命令**
 
 | 命令 | 作用 |
 | --- | --- |
-| `bash docker.sh start [编号]` | 启动仿真并跑完整自主建图任务 |
-| `bash docker.sh run [编号]` | 仿真已运行时，只跑一轮建图 |
+| `bash docker.sh start [编号]` | 启动仿真并跑完整任务 |
+| `bash docker.sh run [编号]` | 仿真已运行时只跑一轮建图 |
 | `bash docker.sh sim` | 只启动仿真 |
-| `bash docker.sh check` | 只做传感器/环境就绪检查 |
-| `bash docker.sh audit <编号>` | 对已保存地图做离线几何审计 |
-| `bash docker.sh status` | 查看仿真与最近任务状态 |
+| `bash docker.sh check` | 只做传感器 / 环境就绪检查 |
+| `bash docker.sh audit <编号>` | 对已保存地图重新做几何审计 |
+| `bash docker.sh status` | 仿真与最近任务状态 |
 | `bash docker.sh stop` | 请求停止并保留部分结果 |
-| `bash docker.sh repair` | GPU 异常时重建项目容器（保留源码与结果） |
-| `bash docker.sh build` | 重新编译两个 ROS 2 包 |
+| `bash docker.sh repair` | GPU 异常时重建容器（保留源码与结果） |
+| `bash docker.sh build` | 重新编译 ROS 2 包 |
 | `bash docker.sh shell` | 进入容器 |
 
-## 结果判定
+## 仓库结构
 
-| 状态 | 含义 |
-| --- | --- |
-| `COMPLETED` | 采集完成，且全部设定的质量检查通过 |
-| `NEEDS_REVIEW` | 已保存，但几何质量未达标 |
-| `FAILED` | 故障（传感器中断、位姿跳变、组件退出、磁盘不足等） |
-| `CANCELLED` | 操作者主动停止，已尽力保存部分地图 |
-
-几何审计检查项（`deployment/audit_run.py`，全部为布尔且 fail-closed）：
-
-- 地面覆盖率 @10 cm ≥ 99.5%，@20 cm ≥ 99.999%，最大地面缺口半径 ≤ 25 cm；
-- 墙面覆盖率 @15 cm ≥ 99.5%，中位残差 ≤ 5 mm，>20 cm 离群点 ≤ 0.01%；
-- 每面墙 @20 cm 覆盖率 ≥ 99.5%，单墙最大缺口 ≤ 25 cm；
-- 顶部条带 @20 cm 覆盖率 ≥ 99.5%，最大缺口 ≤ 25 cm；
-- 全高度足迹 >35 cm 离群点 ≤ 0.01%，所有点位于设定高度范围内。
-
-覆盖率按明确距离容差计算；几何检查与局部时序结果不能证明全场绝对零漂移，也不等于实机验收。
+```text
+.
+├── docker.sh                       # 容器生命周期 + 一键 start/stop/status/repair
+├── build.sh                        # 容器内 colcon 构建
+├── run_auto_max.sh                 # 容器内启动单轮建图
+├── install_dependencies.sh         # Ubuntu 22.04 / ROS Humble 依赖
+├── config/config.json              # 仿真传感器配置
+├── deps/zsibot_sdk/                # 厂商 SDK（x86_64 动态库 + Python 绑定）
+├── deployment/
+│   ├── control.py                  # start / stop / status / recover
+│   ├── simulation.py               # 托管 UeSim、MuJoCo、控制器
+│   ├── check.py                    # 有界就绪检查
+│   ├── run_session.py              # 单轮任务监督、保存、终态判定
+│   ├── audit_run.py                # 离线几何审计（12 项，fail-closed）
+│   ├── provenance.py               # 源码 / 配置 / 厂商程序指纹
+│   ├── telemetry.py                # 传感器新鲜度、非空、标定
+│   ├── observer.py · gpu_probe.py · common.py
+│   ├── tests/                      # pytest 合约测试 + 录制夹具
+│   ├── validation/                 # 时序 / 覆盖率 / 表面组成等离线工具与报告
+│   └── SHA256SUMS.runtime.txt      # 厂商程序校验清单
+├── dev_ws/
+│   ├── src/robotac_mapping_baseline/   # C++ 建图包（体素融合 / GICP / 滤波）
+│   ├── tools/                          # PCD 预览、质量报告、深度桥接
+│   └── midterm/                        # 自主建图 launch 与运行脚本
+├── finals_ws/
+│   ├── src/robotac_finals/             # 探索、导航、任务管理、可视化
+│   └── test/                           # 点云产物校验
+├── runtime/                        # 厂商配置 + 许可证（src/ 未入库）
+└── docs/                           # 使用说明、迁移说明、验证记录、历史校验清单
+```
 
 ## 测试
 
 ```bash
-# 先构建（部分测试会直接拉起 odom_voxel_mapper 二进制）
-bash docker.sh build
-
-# 在容器内、独立 ROS 域 178 下执行
+bash docker.sh build          # 注入类测试会直接拉起 odom_voxel_mapper
 bash docker.sh shell
 cd /workspace && ROS_DOMAIN_ID=178 python3 -m pytest deployment/tests -q
 ```
 
-`deployment/tests/` 覆盖故障合约、运行期硬化、时序置信度、地面/墙面补扫、溯源与产物校验等（注入类测试要求 `ROS_DOMAIN_ID=178`，避免干扰正在运行的仿真）；`deployment/validation/` 存放可复跑的离线验证工具与 2026-11 的历史报告。
+注入类测试强制 `ROS_DOMAIN_ID=178`，与正在运行的仿真（24）隔离；覆盖故障合约、运行期硬化、时序置信度、地面/墙面补扫、溯源与产物校验。
+
+## 实测记录
+
+2026-11-02 本机完整部署（详见 [`docs/VALIDATION_2026-11-02.md`](docs/VALIDATION_2026-11-02.md)）：
+
+| 指标 | 结果 |
+| --- | --- |
+| 两包源码编译 | 通过（ROS 2 Humble，C++ Release） |
+| 12 s 数据完整性 | 雷达 120 帧 / 里程计 2401 条 / 深度 120 帧 |
+| SDK 链路 | 连接、站立、进入 ACTIVE |
+| 采集预算 / 记录完成 | 840 s / 842.007 s |
+| 终态 | `COMPLETED`（`native_pcd_saved_and_validated`） |
+| 原生 PCD | 1,985,482 个有限点 / 23,825,960 字节 |
+| 无效点比例 | 0，artifact validator PASS，SHA256 通过 |
+
+<p align="center">
+  <img src="deployment/validation/baseline_full_viewer.png" alt="测量墙面点云与地面覆盖率" width="100%">
+  <br>
+  <sub>左：测量墙面点云（蓝）与参考几何（黑）；右：地面覆盖率缺口（红 > 0.5 m）</sub>
+</p>
 
 ## 未入库内容
 
-以下内容体积过大或属于本机运行产物，**不进入 git**，但原工作目录中仍保留：
-
-| 路径 | 体积 | 说明 |
+| 路径 | 体积 | 原因 |
 | --- | --- | --- |
-| `runtime/src/` | 约 7.5 GB | 厂商 UeSim / MuJoCo / 控制器运行文件，见 [`runtime/README.md`](runtime/README.md) |
-| `deployment/validation/*_raw_*/` | 约 23 GB | 早期采集的原始点云与录像 |
-| `history/` | 约 147 MB | 迁移/修复前的源码备份 |
-| `dev_ws/midterm/runs/` | 约 100 MB/轮 | 每轮建图结果 |
-| `deployment/logs/` | 约 9 MB/轮 | 每轮运行日志 |
-| `*/build_humble/`、`*/install_humble/`、`*/log/` | 构建产物 | 由 `bash docker.sh build` 重新生成 |
+| `runtime/src/` | ~7.5 GB | 厂商仿真运行文件，超出仓库限制 |
+| `deployment/validation/*_raw_*/` | ~23 GB | 早期原始采集数据 |
+| `history/` | ~147 MB | 迁移 / 修复前源码备份 |
+| `dev_ws/midterm/runs/` | ~100 MB / 轮 | 每轮建图结果 |
+| `deployment/logs/` | ~9 MB / 轮 | 每轮运行日志 |
+| `*/build_humble/`、`*/install_humble/`、`*/log/` | — | 编译产物，可重新生成 |
 
-## 文档
-
-- [`docs/DOCKER_USAGE.md`](docs/DOCKER_USAGE.md)：日常操作（启动、看结果、中途停止、故障处理）。
-- [`docs/MIGRATION_NOTES.md`](docs/MIGRATION_NOTES.md)：迁移与部署说明、环境与构建约束。
-- [`docs/VALIDATION_2026-11-02.md`](docs/VALIDATION_2026-11-02.md)：2026-11-02 的本机部署实测记录。
-- [`docs/provenance/`](docs/provenance/)：最初迁移清单与整理前的源码 SHA256 快照。
+这些内容仍保留在原始工作目录；仓库只保留源码、脚本、测试、验证报告与体积较小的证据图。
 
 ## 已知限制
 
-- 建图是**里程计锚定的体素融合**，不是带回环优化的完整 SLAM；长距离场景仍可能出现漂移。
-- 简化场景几何只在采集完成后离线核验，不参与导航、不生成或填充点云。
-- 14 分钟专项历史未通过全部检查；修复后未重新验证 14 分钟，默认预算保持 30 分钟、速度上限 0.45 m/s。
-- 仅在容器内仿真验证，未在实物机器人上验收。
+- 建图是**里程计锚定的体素融合**，不含回环优化，长距离仍可能漂移；场景几何只在采集后离线核验，不参与导航或点云填充。
+- 14 分钟专项历史上未通过全部检查；修复后未重新验证 14 分钟，默认预算保持 30 分钟、速度上限 0.45 m/s。
+- 仅在本机仿真验证，未在实物机器人上验收；GPU 依赖 Vulkan，容器重建后需重新确认。
+- 质量门禁是几何代理，不等同赛事官方评分。
+
+## 文档
+
+| 文档 | 内容 |
+| --- | --- |
+| [`docs/DOCKER_USAGE.md`](docs/DOCKER_USAGE.md) | 日常操作：启动、看结果、中途停止、故障处理 |
+| [`docs/MIGRATION_NOTES.md`](docs/MIGRATION_NOTES.md) | 迁移与部署说明、环境与构建约束 |
+| [`docs/VALIDATION_2026-11-02.md`](docs/VALIDATION_2026-11-02.md) | 本机部署实测记录 |
+| [`runtime/README.md`](runtime/README.md) | 厂商运行文件的放置与校验 |
+| [`docs/provenance/`](docs/provenance/) | 最初迁移清单与整理前 SHA256 快照 |
 
 ## 许可
 
-[BSD-3-Clause](LICENSE)，Copyright (c) 2025, ZsiBot。
-厂商 SDK 与运行文件同样遵循其自带许可，见 `deps/zsibot_sdk/LICENSE`、`runtime/LICENSE`。
+[BSD-3-Clause](LICENSE)，Copyright (c) 2025, ZsiBot。厂商 SDK 与运行文件遵循其自带许可（`deps/zsibot_sdk/LICENSE`、`runtime/LICENSE`）。
+
+<p align="center">
+  <sub>Built for the ROBOTAC finals · 结果只代表仿真环境</sub>
+</p>
