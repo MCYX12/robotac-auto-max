@@ -136,12 +136,15 @@ bash docker.sh stop
 ## 测试
 
 ```bash
-# 在容器内执行（需要 ROS 2 / numpy / scipy）
+# 先构建（部分测试会直接拉起 odom_voxel_mapper 二进制）
+bash docker.sh build
+
+# 在容器内、独立 ROS 域 178 下执行
 bash docker.sh shell
-cd /workspace && python3 -m pytest deployment/tests -q
+cd /workspace && ROS_DOMAIN_ID=178 python3 -m pytest deployment/tests -q
 ```
 
-`deployment/tests/` 覆盖故障合约、运行期硬化、时序置信度、地面/墙面补扫、溯源与产物校验等；`deployment/validation/` 存放可复跑的离线验证工具与 2026-11 的历史报告。
+`deployment/tests/` 覆盖故障合约、运行期硬化、时序置信度、地面/墙面补扫、溯源与产物校验等（注入类测试要求 `ROS_DOMAIN_ID=178`，避免干扰正在运行的仿真）；`deployment/validation/` 存放可复跑的离线验证工具与 2026-11 的历史报告。
 
 ## 未入库内容
 
