@@ -1,0 +1,24 @@
+{
+  "state": "COMPLETED",
+  "reason": "configured_geometry_proxy_checks_passed",
+  "elapsed_seconds": 1802.021,
+  "hard_runtime_seconds": 1800.0,
+  "remaining_seconds": 0.0,
+  "map_points": 1889650,
+  "output_pcd": "/workspace/dev_ws/midterm/runs/auto_max_20261109_205614/auto_max_20261109_205614_native.pcd",
+  "health_failure": null,
+  "control_state": "WATCHDOG_STOP",
+  "sensor_age_seconds": {
+    "lidar": 0.088,
+    "odom": 0.001,
+    "depth": 0.086
+  },
+  "trigger_reason": "hard_deadline",
+  "save_attempt": 1,
+  "saved_points": 1889712,
+  "size_bytes": 22676720,
+  "partial_pcd_saved": false,
+  "service_message": "/workspace/dev_ws/midterm/runs/auto_max_20261109_205614/auto_max_20261109_205614_native.pcd",
+  "quality_validation": "PASS_PROXY_CHECKS",
+  "perfect_map_certified": false
+}

@@ -1,0 +1,47 @@
+{
+  "state": "COMPLETED",
+  "reason": "configured_geometry_proxy_checks_passed",
+  "run_id": "auto_max_20261109_205614",
+  "supervisor_pid": 1332,
+  "supervisor_start_ticks": 247923,
+  "heartbeat_monotonic": 4290.667364482,
+  "output_directory": "/workspace/dev_ws/midterm/runs/auto_max_20261109_205614",
+  "elapsed_seconds": 1806.595,
+  "pcd": "/workspace/dev_ws/midterm/runs/auto_max_20261109_205614/auto_max_20261109_205614_native.pcd",
+  "preview": "/workspace/dev_ws/midterm/runs/auto_max_20261109_205614/auto_max_20261109_205614_preview.png",
+  "sha256": "9dcee16fe147b202c8fd24d4043aae67cda6adcf3de0ec323597d530185f8b9f",
+  "points": 1889712,
+  "quality_state": "PASS_PROXY_CHECKS",
+  "geometry_audit": "/workspace/dev_ws/midterm/runs/auto_max_20261109_205614/geometry_audit.json",
+  "audit_policy": {
+    "version": "2026-11-03.v3",
+    "footprint_margin_m": 0.35,
+    "maximum_footprint_outlier_fraction": 0.0001,
+    "minimum_per_wall_coverage_at_20cm": 0.995,
+    "maximum_per_wall_gap_m": 0.25,
+    "minimum_z_m": -0.3,
+    "maximum_z_m": 3.35,
+    "outlier_cluster_voxel_m": 0.25,
+    "top_strip_heights_m": [
+      2.75,
+      2.85,
+      2.95
+    ],
+    "minimum_top_strip_coverage_at_20cm": 0.995,
+    "maximum_top_strip_gap_m": 0.25
+  },
+  "audit_sources_sha256": {
+    "reference": "524fe86f259b28327c613b294dcff13d7a03056fe62c3de89cc72e698643f876",
+    "auditor": "f5eb62f11c5437ea220588d0921ea41ee997615629dc7aca71b033d07a86bff7",
+    "reader": "c037216177648c169e825f0f3bb881e72d406e734a435d690be2bb6332015610"
+  },
+  "perfect_map_certified": false,
+  "quality_limits": [
+    "Collision boxes simplify the visible mesh; floor mask seals robot-inaccessible seams.",
+    "Coverage uses nearest measured points at stated spatial tolerances, not exact surface completeness.",
+    "No rigid alignment or reference-generated points are applied to the native PCD.",
+    "These proxy checks cannot certify a perfect map or zero drift.",
+    "Wall end faces and lower strips are diagnostic; the upper-strip gate checks observation support for the 3 m collision-wall proxy, not surveyed visible-mesh completeness.",
+    "The all-point footprint test detects spatial anomalies at every height but is not a temporal drift measurement."
+  ]
+}

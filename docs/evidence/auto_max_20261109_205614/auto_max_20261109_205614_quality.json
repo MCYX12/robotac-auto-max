@@ -1,0 +1,43 @@
+[
+  {
+    "path": "/workspace/dev_ws/midterm/runs/auto_max_20261109_205614/auto_max_20261109_205614_native.pcd",
+    "sha256": "9dcee16fe147b202c8fd24d4043aae67cda6adcf3de0ec323597d530185f8b9f",
+    "pcd_structure_valid": true,
+    "pcd_declared_points": 1889712,
+    "decoded_points": 1889712,
+    "finite_points": 1889712,
+    "invalid_ratio": 0.0,
+    "bbox_min_xyz_m": [
+      -2.8603837490081787,
+      -16.590829849243164,
+      0.0
+    ],
+    "bbox_max_xyz_m": [
+      26.895463943481445,
+      7.484539985656738,
+      3.1393237113952637
+    ],
+    "percentile_01_xyz_m": [
+      -2.689976453781128,
+      -16.490007400512695,
+      0.0
+    ],
+    "percentile_50_xyz_m": [
+      15.011650562286377,
+      -2.1872572898864746,
+      1.0346916913986206
+    ],
+    "percentile_99_xyz_m": [
+      26.780004501342773,
+      7.289992332458496,
+      3.013423976898193
+    ],
+    "nearest_neighbor_m": {
+      "median": 0.01936429983229952,
+      "p95": 0.024697060840648107,
+      "p99": 0.025389614705405742,
+      "isolated_over_0_10_ratio": 0.0,
+      "isolated_over_0_20_ratio": 0.0
+    }
+  }
+]

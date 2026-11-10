@@ -199,15 +199,21 @@ bash docker.sh stop
 
 ```text
 dev_ws/midterm/runs/<run_id>/
-├── <run_id>_native.pcd        # 原生点云（提交物）
-├── <run_id>_preview.png       # 俯视 / 侧视预览
-├── <run_id>_quality.json      # 点云代理指标
-├── 地图质量检查.md             # 可读版质量报告
-├── result.json                # 终态、原因、耗时、点数
-├── provenance.json            # 源码 / 标定 / 厂商程序指纹
-├── provenance_check.json      # 运行期一致性校验
-├── SHA256SUMS.txt             # PCD 校验和
-└── autonomous.log             # 全量运行日志
+├── <run_id>_native.pcd              # 原生点云（提交物）
+├── <run_id>_native.pcd.checkpoint.pcd   # 中途检查点
+├── <run_id>_native.pcd.ground_voxels.csv    # 地面体素证据
+├── <run_id>_native.pcd.rejected_voxels.csv  # 被拒体素证据
+├── <run_id>_preview.png             # 俯视 / 侧视预览
+├── <run_id>_quality.json            # 点云代理指标
+├── <run_id>_motion.json             # 任务状态、计时、保存结果
+├── <run_id>_native.pcd.acquisition.json  # 建图内核计数与滤波统计
+├── 地图质量检查.md                   # 可读版质量报告
+├── geometry_audit.json              # 12 项检查明细与缺口坐标
+├── geometry_audit.png               # 墙面比对 + 地面缺口热力图
+├── result.json                      # 终态、原因、耗时、点数
+├── provenance.json / provenance_check.json   # 指纹与一致性
+├── SHA256SUMS.txt                   # PCD 校验和
+└── autonomous.log                   # 全量运行日志
 ```
 
 **常用命令**
@@ -270,7 +276,37 @@ cd /workspace && ROS_DOMAIN_ID=178 python3 -m pytest deployment/tests -q
 
 ## 实测记录
 
-2026-11-02 本机完整部署（详见 [`docs/VALIDATION_2026-11-02.md`](docs/VALIDATION_2026-11-02.md)）：
+### 2026-11-09 · 30 分钟完整运行
+
+| 项目 | 结果 |
+| --- | --- |
+| 运行编号 | `auto_max_20261109_205614` |
+| 终态 | `COMPLETED` · 12 / 12 门禁通过 |
+| 任务耗时 | 1802.0 s（预算 1800 s，`hard_deadline` 触发，记录完成 1806.6 s） |
+| 原生 PCD | 1,889,712 点 · 22,676,720 字节 |
+| 场景包围盒 | 29.76 × 24.08 × 3.14 m |
+| 地面覆盖 | 99.65% @10 cm · 100% @20 cm |
+| 墙面覆盖 | 99.76% @15 cm，最差单墙 100% @20 cm |
+| 最大缺口 | 地面 0.173 m · 墙面 0.171 m · 顶部条带 0.133 m |
+| 离群点 | 墙面 0.00000% · 全高度 0 点 |
+| PCD SHA256 | `9dcee16fe147…f8b9f` |
+
+<p align="center">
+  <img src="docs/evidence/auto_max_20261109_205614/auto_max_20261109_205614_preview.png" alt="原生 PCD 俯视与侧视预览" width="100%">
+  <br>
+  <sub>原生 PCD 预览：俯视 29.8 × 24.1 m 场景（左）与侧视高度分布（右）；共 1,889,712 点</sub>
+</p>
+
+<p align="center">
+  <img src="docs/evidence/auto_max_20261109_205614/geometry_audit.png" alt="墙面点云对比与地面覆盖率缺口" width="100%">
+  <br>
+  <sub>几何审计：测量墙面点云（蓝）与简化参考几何（黑）对比（左）；地面覆盖缺口热力图（右）</sub>
+</p>
+
+完整报告与采集统计见 [`docs/evidence/auto_max_20261109_205614/`](docs/evidence/auto_max_20261109_205614/README.md)。
+
+<details>
+<summary><b>2026-11-02 · 首轮部署验证（840 s）</b></summary>
 
 | 指标 | 结果 |
 | --- | --- |
@@ -282,11 +318,9 @@ cd /workspace && ROS_DOMAIN_ID=178 python3 -m pytest deployment/tests -q
 | 原生 PCD | 1,985,482 个有限点 / 23,825,960 字节 |
 | 无效点比例 | 0，artifact validator PASS，SHA256 通过 |
 
-<p align="center">
-  <img src="deployment/validation/baseline_full_viewer.png" alt="测量墙面点云与地面覆盖率" width="100%">
-  <br>
-  <sub>左：测量墙面点云（蓝）与参考几何（黑）；右：地面覆盖率缺口（红 > 0.5 m）</sub>
-</p>
+详见 [`docs/VALIDATION_2026-11-02.md`](docs/VALIDATION_2026-11-02.md)。
+
+</details>
 
 ## 未入库内容
 
@@ -295,11 +329,11 @@ cd /workspace && ROS_DOMAIN_ID=178 python3 -m pytest deployment/tests -q
 | `runtime/src/` | ~7.5 GB | 厂商仿真运行文件，超出仓库限制 |
 | `deployment/validation/*_raw_*/` | ~23 GB | 早期原始采集数据 |
 | `history/` | ~147 MB | 迁移 / 修复前源码备份 |
-| `dev_ws/midterm/runs/` | ~100 MB / 轮 | 每轮建图结果 |
+| `dev_ws/midterm/runs/` | ~105 MB / 轮 | 每轮完整结果（报告与预览已归档至 `docs/evidence/`） |
 | `deployment/logs/` | ~9 MB / 轮 | 每轮运行日志 |
 | `*/build_humble/`、`*/install_humble/`、`*/log/` | — | 编译产物，可重新生成 |
 
-这些内容仍保留在原始工作目录；仓库只保留源码、脚本、测试、验证报告与体积较小的证据图。
+这些内容仍保留在原始工作目录；仓库只保留源码、脚本、测试、验证报告与体积较小的证据图（不含 22 MB 的 PCD 本体）。
 
 ## 已知限制
 
@@ -315,6 +349,7 @@ cd /workspace && ROS_DOMAIN_ID=178 python3 -m pytest deployment/tests -q
 | [`docs/DOCKER_USAGE.md`](docs/DOCKER_USAGE.md) | 日常操作：启动、看结果、中途停止、故障处理 |
 | [`docs/MIGRATION_NOTES.md`](docs/MIGRATION_NOTES.md) | 迁移与部署说明、环境与构建约束 |
 | [`docs/VALIDATION_2026-11-02.md`](docs/VALIDATION_2026-11-02.md) | 本机部署实测记录 |
+| [`docs/evidence/`](docs/evidence/) | 30 分钟完整运行的报告、审计图与预览 |
 | [`runtime/README.md`](runtime/README.md) | 厂商运行文件的放置与校验 |
 | [`docs/provenance/`](docs/provenance/) | 最初迁移清单与整理前 SHA256 快照 |
 
